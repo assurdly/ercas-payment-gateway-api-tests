@@ -4553,6 +4553,16 @@
           "",
           "pm.environment.set(\"secretKey\", \"ERCS-TEST-OCJRLP0GJ1T0NG9GV4MTFLIDRYPWFTBK\");",
           "pm.collectionVariables.set(\"secretKey\", \"ERCS-TEST-OCJRLP0GJ1T0NG9GV4MTFLIDRYPWFTBK\");",
+          "",
+          "pm.collectionVariables.set(",
+          "    \"baseUrl\",",
+          "    \"https://api.dev.phoenix-wallet.ercaspay.com/api/v1\"",
+          ");",
+          "",
+          "pm.environment.set(",
+          "    \"baseUrl\",",
+          "    \"https://api.dev.phoenix-wallet.ercaspay.com/api/v1\"",
+          ");",
           ""
         ]
       }
