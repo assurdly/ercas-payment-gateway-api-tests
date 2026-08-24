@@ -1,0 +1,10 @@
+{
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+    "User-Agent": "PostmanRuntime/7.39.1",
+    "Cache-Control": "no-cache",
+    "Postman-Token": "4dd4d13d-8877-48b8-ae95-0121ff2d5006",
+    "Host": "api.dev.phoenix-wallet.ercaspay.com",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Connection": "keep-alive"
+}
