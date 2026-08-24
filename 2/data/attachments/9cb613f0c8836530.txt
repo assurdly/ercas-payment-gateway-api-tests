@@ -1,0 +1,6 @@
+{
+  "amount": 2000,
+  "currency": "NGN",
+  "paymentReference": "QA-1787548250086-{{$randomInt}",
+  "redirectUrl": "https://example.com/payments/callback"
+}
