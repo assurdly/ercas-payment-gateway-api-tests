@@ -4549,7 +4549,11 @@
           "",
           "pm.variables.set(\"randomNigerianPhone\", phoneNumber);",
           "",
-          "console.log(\"Generated Nigerian phone:\", phoneNumber);"
+          "console.log(\"Generated Nigerian phone:\", phoneNumber);",
+          "",
+          "pm.environment.set(\"secretKey\", \"ERCS-TEST-OCJRLP0GJ1T0NG9GV4MTFLIDRYPWFTBK\");",
+          "pm.collectionVariables.set(\"secretKey\", \"ERCS-TEST-OCJRLP0GJ1T0NG9GV4MTFLIDRYPWFTBK\");",
+          ""
         ]
       }
     },
