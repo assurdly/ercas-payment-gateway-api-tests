@@ -14,7 +14,7 @@
           "name": "Initiate Transaction",
           "item": [
             {
-              "name": "Initiate Transaction - Valid",
+              "name": "Initiate Transaction -  Valid",
               "event": [
                 {
                   "listen": "prerequest",
