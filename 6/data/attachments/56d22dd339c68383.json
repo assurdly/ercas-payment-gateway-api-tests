@@ -1,0 +1,13 @@
+{
+    "Server": "nginx/1.31.0",
+    "Date": "Sat, 29 Aug 2026 01:19:40 GMT",
+    "Content-Type": "application/json",
+    "Content-Length": "735",
+    "Connection": "keep-alive",
+    "Vary": "Accept, origin",
+    "Allow": "GET, HEAD, OPTIONS",
+    "X-Frame-Options": "DENY",
+    "X-Content-Type-Options": "nosniff",
+    "Referrer-Policy": "same-origin",
+    "Cross-Origin-Opener-Policy": "same-origin"
+}

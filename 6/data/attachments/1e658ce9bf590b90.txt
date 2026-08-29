@@ -1,0 +1,16 @@
+{
+  "amount": 100,
+  "paymentReference": "QA-1787966381056-{{$randomInt}",
+  "paymentMethods": "card,bank-transfer,ussd,qrcode",
+  "customerName": "Mae Stracke",
+  "customerPhoneNumber": "689-411-1779",
+  "redirectUrl": "https://example.com/payments/callback",
+  "description": "QA payment initiation test",
+  "currency": "NGN",
+  "feeBearer": "customer",
+  "metadata": {
+    "firstname": "Orville",
+    "lastname": "Green",
+    "email": "qa.1787966381056@example.com"
+  }
+}
