@@ -1,0 +1,12 @@
+{
+    "Server": "nginx/1.31.0",
+    "Date": "Fri, 11 Sep 2026 20:13:40 GMT",
+    "Content-Type": "text/html; charset=utf-8",
+    "Content-Length": "179",
+    "Connection": "keep-alive",
+    "X-Frame-Options": "DENY",
+    "X-Content-Type-Options": "nosniff",
+    "Referrer-Policy": "same-origin",
+    "Cross-Origin-Opener-Policy": "same-origin",
+    "Vary": "origin"
+}
