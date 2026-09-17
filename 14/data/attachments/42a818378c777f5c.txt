@@ -1,0 +1,18 @@
+{
+  "amount": 100,
+  "paymentReference": "QA-1789678777654-{{$randomInt}",
+  "paymentMethods": "card,bank-transfer,ussd,qrcode",
+  "customerName": "Alberta Barrows",
+  "customerEmail": "not-an-email",
+  "customerPhoneNumber": "464-947-3399",
+  "redirectUrl": "https://example.com/payments/callback",
+  "description": "QA payment initiation test",
+  "currency": "NGN",
+  "feeBearer": "customer",
+  "isCardTokenized": true,
+  "metadata": {
+    "firstname": "Gennaro",
+    "lastname": "Herzog",
+    "email": "qa.1789678777654@example.com"
+  }
+}
