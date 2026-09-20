@@ -1,0 +1,1 @@
+{"requestSuccessful":true,"responseCode":"success","responseMessage":"success","responseBody":{"paymentReference":"QA-1789928545874-{{$randomInt}","transactionReference":"ER|YOOVX4T2FKSHMM","checkoutUrl":"https://phoenix-checkout-dev.netlify.app/ER|YOOVX4T2FKSHMM/bank-transfer"},"statusCode":200}
