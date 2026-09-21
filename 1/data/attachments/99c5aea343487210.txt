@@ -1,0 +1,5 @@
+{
+  "message": "string",
+  "sms_message": "string",
+  "beneficiary_account": ""
+}

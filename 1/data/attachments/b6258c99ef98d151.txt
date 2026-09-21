@@ -1,0 +1,10 @@
+{
+  "sender_account": "",
+  "amount": "",
+  "recipient_account_number": "",
+  "narration": "",
+  "recipient_account_name": "",
+  "channel": "",
+  "pin": "",
+  "is_beneficiary": ""
+}

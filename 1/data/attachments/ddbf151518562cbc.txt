@@ -1,0 +1,1 @@
+{"type":"validation_error","code":"invalid","message":"This field should contain digits only.","field_name":"pin"}

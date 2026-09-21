@@ -1,0 +1,15 @@
+{
+  "amount": -1,
+  "narration": "string",
+  "type": "Transfer",
+  "is_recurring": true,
+  "frequency": "Daily",
+  "start_date": "2026-09-21T15:06:08.827Z",
+  "end_date": "2026-09-21T15:06:08.827Z",
+  "schedule_run_day_of_week": "Monday",
+  "schedule_run_calendar_day": 1,
+  "account_number": "",
+  "pin": "1234",
+  "airtime_phone": "08000000000",
+  "airtime_service": "AIRTELVTU"
+}

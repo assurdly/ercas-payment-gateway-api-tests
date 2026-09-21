@@ -1,0 +1,7 @@
+{
+  "created_at": "2026-09-21T15:06:43.113Z",
+  "name": "string",
+  "amount": -1,
+  "wishlist": "string",
+  "item": "string"
+}

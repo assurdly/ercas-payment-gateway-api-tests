@@ -1,0 +1,4 @@
+{
+  "fund_request": "string",
+  "rejection_reason": "string"
+}

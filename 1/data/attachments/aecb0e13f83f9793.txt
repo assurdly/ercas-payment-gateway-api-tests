@@ -1,0 +1,9 @@
+{
+  "house_number": "",
+  "street": "",
+  "city": "",
+  "state": "",
+  "local_government": "",
+  "nearest_landmark": "",
+  "phone": ""
+}

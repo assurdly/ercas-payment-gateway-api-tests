@@ -1,0 +1,1 @@
+{"type":"validation_error","code":"min_value","message":"Ensure this value is greater than or equal to 1.0.","field_name":"amount"}

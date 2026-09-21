@@ -1,0 +1,6 @@
+{
+  "email": "not-an-email",
+  "phone": "08000000000",
+  "nin": "",
+  "bvn": ""
+}

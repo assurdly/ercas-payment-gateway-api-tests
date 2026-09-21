@@ -1,0 +1,10 @@
+{
+  "firstname": "",
+  "lastname": "",
+  "middlename": "",
+  "gender": "",
+  "date_of_birth": "",
+  "state": "",
+  "local_government": "",
+  "address": ""
+}

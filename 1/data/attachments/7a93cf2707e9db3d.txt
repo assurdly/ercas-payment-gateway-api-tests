@@ -1,0 +1,4 @@
+{
+  "action": "APPROVE",
+  "rejection_message": "string"
+}

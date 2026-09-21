@@ -1,0 +1,14 @@
+{
+  "sender_account": "",
+  "amount": "1000.00",
+  "recipient_account_number": "",
+  "narration": "string",
+  "recipient_account_name": "",
+  "channel": "WEB",
+  "bank": "string",
+  "name_enquiry_reference": "string",
+  "beneficiary_kyc_level": "string",
+  "beneficiary_bvn": "",
+  "pin": "invalid",
+  "is_beneficiary": true
+}

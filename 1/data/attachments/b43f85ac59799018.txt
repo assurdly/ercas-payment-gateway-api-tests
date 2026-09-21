@@ -1,0 +1,1 @@
+{"type":"https://tools.ietf.org/html/rfc9110#section-15.5.16","title":"Unsupported Media Type","status":415,"traceId":"00-f5dcef1e8512329bc9378fb4f537f0a1-6c77ca20e4d2f427-01"}

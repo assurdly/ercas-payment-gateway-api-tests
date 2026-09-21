@@ -1,1 +1,1 @@
-{"reportName":"Sayswitch Merchant APIs - Quality Readiness with history","testRuns":[],"statistic":{"failed":55,"broken":0,"skipped":0,"passed":6,"unknown":0,"total":61},"time":{"start":1787547681597,"stop":1787547694061,"duration":12464,"minDuration":164,"maxDuration":910,"sumDuration":12288}}
+{"reportName":"Allure Report with history","testRuns":[],"statistic":{"failed":807,"broken":0,"skipped":0,"passed":770,"unknown":0,"total":1577},"time":{"start":1790002964006,"stop":1790003238018,"duration":274012,"minDuration":135,"maxDuration":1845,"sumDuration":269127}}
