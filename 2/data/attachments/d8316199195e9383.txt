@@ -1,0 +1,12 @@
+{
+  "name": "",
+  "alias": "",
+  "minimum_amount": "",
+  "interest_rate": "",
+  "interest_type": "",
+  "description": "",
+  "enable_special_interest": "",
+  "special_interest_start_date": "",
+  "special_interest_end_date": "",
+  "special_interest_percent_increase": ""
+}

@@ -1,0 +1,5 @@
+{
+  "recipient": "string",
+  "pin": "1234",
+  "rejection_reason": "string"
+}

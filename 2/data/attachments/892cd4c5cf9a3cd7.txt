@@ -1,0 +1,10 @@
+{
+  "created_at": "2026-09-24T21:01:16.467Z",
+  "amount": 1000,
+  "win_id": "yhk04mzua8phopl1lx75qqzr",
+  "currency": "string",
+  "is_customer_notify": true,
+  "is_price_redeemed": true,
+  "cashtoken_recipient": "",
+  "user": ""
+}

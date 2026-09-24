@@ -1,0 +1,16 @@
+{
+  "amount": "1000.00",
+  "narration": "string",
+  "type": "Transfer",
+  "is_recurring": true,
+  "frequency": "Daily",
+  "start_date": "2026-09-24T21:00:50.505Z",
+  "end_date": "2026-09-24T21:00:50.505Z",
+  "schedule_run_day_of_week": "Monday",
+  "schedule_run_calendar_day": 1,
+  "account_number": "",
+  "pin": "1234",
+  "electricity_meter_number": "string",
+  "electricity_disco": "string",
+  "electricity_service_type": "string"
+}

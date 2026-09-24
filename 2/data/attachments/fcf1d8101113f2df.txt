@@ -1,0 +1,7 @@
+{
+  "gift_id": "",
+  "batch_id": "",
+  "currency": "",
+  "amount": "",
+  "win_id": ""
+}

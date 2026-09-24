@@ -1,0 +1,13 @@
+{
+  "product_type": "invalid_option",
+  "amount": "1000.00",
+  "phone": "08000000000",
+  "network": "string",
+  "sender_account": "",
+  "tenor_id": "yhk04mzua8phopl1lx75qqzr",
+  "repayment_frequency": "invalid_option",
+  "service": "string",
+  "data_plan_code": "string",
+  "channel": "MOBILE",
+  "pin": "1234"
+}

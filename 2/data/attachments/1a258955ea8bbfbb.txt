@@ -1,0 +1,9 @@
+{
+  "amount": "1000.00",
+  "recipient_account_number": "",
+  "narration": "string",
+  "recipient_account_name": "",
+  "channel": "WEB",
+  "pin": "1234",
+  "is_beneficiary": true
+}

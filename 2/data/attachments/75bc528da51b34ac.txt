@@ -1,0 +1,16 @@
+{
+  "amount": "1000.00",
+  "narration": "string",
+  "type": "Transfer",
+  "is_recurring": true,
+  "frequency": "Daily",
+  "start_date": "2026-09-24T21:00:49.963Z",
+  "end_date": "2026-09-24T21:00:49.963Z",
+  "schedule_run_day_of_week": "Monday",
+  "schedule_run_calendar_day": 1,
+  "account_number": "",
+  "pin": "invalid",
+  "data_phone": "08000000000",
+  "data_plan_code": "string",
+  "data_network": "string"
+}

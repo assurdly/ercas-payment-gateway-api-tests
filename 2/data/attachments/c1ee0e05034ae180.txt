@@ -1,0 +1,5 @@
+{
+  "token": "",
+  "token_type": "",
+  "email": "qa.personal-banking@example.com"
+}

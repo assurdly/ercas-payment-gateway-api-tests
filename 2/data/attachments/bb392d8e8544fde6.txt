@@ -1,0 +1,5 @@
+{
+  "is_full_repayment": false,
+  "external_reference": "string",
+  "pin": "1234"
+}

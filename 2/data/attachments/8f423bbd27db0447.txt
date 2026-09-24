@@ -1,0 +1,8 @@
+{
+  "street": "string",
+  "city": "string",
+  "state": "Lagos",
+  "local_government": "Ikeja",
+  "nearest_landmark": "string",
+  "phone": "08000000000"
+}

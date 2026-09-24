@@ -1,0 +1,1 @@
+{"success":true,"data":{"total_spending":null,"inflow":null,"outflow":null,"airtime":null,"data":null,"transfers":null,"betting":null,"electricity":null,"cable_tv":null,"bill_payment":null,"waec":null,"jamb":null,"savings":null}}

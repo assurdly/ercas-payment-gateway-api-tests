@@ -1,0 +1,1 @@
+{"type":"validation_error","code":"does_not_exist","message":"Invalid pk \"string\" - object does not exist.","field_name":"bank"}

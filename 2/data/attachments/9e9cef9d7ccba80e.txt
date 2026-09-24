@@ -1,0 +1,14 @@
+{
+  "end_date": "2026-07-29",
+  "title": "string",
+  "description": "string",
+  "items": [
+    {
+      "item_name": "string",
+      "item_description": "string",
+      "item_price": "string",
+      "item_quantity": "string",
+      "priority_level": "Low"
+    }
+  ]
+}

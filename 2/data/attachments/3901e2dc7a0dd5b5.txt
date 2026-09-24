@@ -1,0 +1,6 @@
+{
+  "batch_id": "yhk04mzua8phopl1lx75qqzr",
+  "currency": "string",
+  "amount": 1000,
+  "win_id": "yhk04mzua8phopl1lx75qqzr"
+}

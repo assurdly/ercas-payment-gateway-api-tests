@@ -1,0 +1,12 @@
+{
+  "name": "string",
+  "alias": "TARGET",
+  "minimum_amount": 1000,
+  "interest_rate": 1000,
+  "interest_type": "invalid_option",
+  "description": "string",
+  "enable_special_interest": true,
+  "special_interest_start_date": "2026-09-24T21:00:14.684Z",
+  "special_interest_end_date": "2026-09-24T21:00:14.684Z",
+  "special_interest_percent_increase": 1
+}
