@@ -1,0 +1,1 @@
+{"type":"client_error","code":"bad_request","message":"Please set up your transaction pin and try again.","field_name":"pin"}

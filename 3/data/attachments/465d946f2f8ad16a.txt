@@ -1,0 +1,1 @@
+{"type":"validation_error","code":"invalid","message":"The provided account type is not HerWealth","field_name":"account"}

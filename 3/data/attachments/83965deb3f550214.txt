@@ -1,0 +1,6 @@
+{
+  "pin": "1234",
+  "is_enabled": true,
+  "single_transaction_limit": -1,
+  "daily_transaction_limit": -1
+}

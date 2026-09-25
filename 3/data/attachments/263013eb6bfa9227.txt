@@ -1,0 +1,5 @@
+{
+  "channel": "WEB",
+  "pin": "1234",
+  "account": ""
+}

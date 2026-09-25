@@ -1,0 +1,6 @@
+{
+  "amount": "",
+  "customer": "",
+  "info": "",
+  "reference": ""
+}

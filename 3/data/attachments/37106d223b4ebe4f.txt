@@ -1,0 +1,17 @@
+{
+  "amount": "1000.00",
+  "narration": "string",
+  "type": "Transfer",
+  "is_recurring": true,
+  "frequency": "Daily",
+  "start_date": "2026-09-25T20:59:19.208Z",
+  "end_date": "2026-09-25T20:59:19.208Z",
+  "schedule_run_day_of_week": "Monday",
+  "schedule_run_calendar_day": 1,
+  "account_number": "",
+  "pin": "invalid",
+  "is_kolomoni_transfer": true,
+  "bank": "string",
+  "recipient_account_number": "",
+  "recipient_account_name": ""
+}

@@ -1,1 +1,0 @@
-# ercas-payment-gateway-api-tests

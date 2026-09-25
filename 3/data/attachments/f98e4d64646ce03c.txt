@@ -1,0 +1,13 @@
+{
+  "account": "",
+  "delivery_method": "AGENT",
+  "phone": "08000000000",
+  "house_number": "string",
+  "street": "string",
+  "city": "string",
+  "state": "Lagos",
+  "local_government": "Ikeja",
+  "nearest_landmark": "string",
+  "branch": "string",
+  "pin": "1234"
+}

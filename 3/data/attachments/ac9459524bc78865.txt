@@ -1,0 +1,4 @@
+{
+  "name": "string",
+  "is_active": true
+}

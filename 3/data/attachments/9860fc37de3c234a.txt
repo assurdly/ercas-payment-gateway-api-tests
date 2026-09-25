@@ -1,0 +1,15 @@
+{
+  "amount": "1000.00",
+  "narration": "string",
+  "type": "invalid_option",
+  "is_recurring": true,
+  "frequency": "invalid_option",
+  "start_date": "2026-09-25T20:59:13.458Z",
+  "end_date": "2026-09-25T20:59:13.458Z",
+  "schedule_run_day_of_week": "Monday",
+  "schedule_run_calendar_day": 1,
+  "account_number": "",
+  "pin": "1234",
+  "airtime_phone": "08000000000",
+  "airtime_service": "AIRTELVTU"
+}

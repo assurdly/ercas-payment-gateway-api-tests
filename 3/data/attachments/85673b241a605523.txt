@@ -1,0 +1,1 @@
+{"type":"validation_error","code":"invalid","message":"The selected phone number is already registered","field_name":"phone"}

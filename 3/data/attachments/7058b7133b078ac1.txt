@@ -1,0 +1,9 @@
+{
+  "merchant_id": "p7wzipghzgw6eib3bowm7bst",
+  "terminal_id": "p7wzipghzgw6eib3bowm7bst",
+  "merchant_name": "string",
+  "currency": "string",
+  "status": "ACTIVE",
+  "card": "",
+  "user": ""
+}

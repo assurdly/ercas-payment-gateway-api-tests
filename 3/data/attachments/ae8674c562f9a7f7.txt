@@ -1,0 +1,9 @@
+{
+  "created_at": "2026-09-25T20:56:27.047Z",
+  "kyc_level": "BRONZE",
+  "rank": 1,
+  "requirements": "string",
+  "daily_limit": -1,
+  "max_balance": -1,
+  "single_transfer_limit": -1
+}

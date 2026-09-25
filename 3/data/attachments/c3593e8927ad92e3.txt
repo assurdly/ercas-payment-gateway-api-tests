@@ -1,0 +1,1 @@
+{"success":true,"data":{"total_amount_contributed":0.0,"total_wishlist":0,"total_active_wishlist":0,"total_closed_wishlist":0,"total_suspended_wishlist":0}}

@@ -1,0 +1,7 @@
+{
+  "amount": "1000.00",
+  "narration": "string",
+  "channel": "WEB",
+  "pin": "1234",
+  "sender_account": ""
+}

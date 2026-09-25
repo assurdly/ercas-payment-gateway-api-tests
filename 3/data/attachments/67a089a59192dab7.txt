@@ -1,0 +1,4 @@
+{
+  "device_id": "qa-device-001",
+  "user": ""
+}

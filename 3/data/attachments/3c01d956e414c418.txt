@@ -1,0 +1,4 @@
+{
+  "password": "ChangeMe123!",
+  "device_id": "qa-device-001"
+}

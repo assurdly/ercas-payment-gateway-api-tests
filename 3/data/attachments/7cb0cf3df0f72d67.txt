@@ -1,0 +1,9 @@
+{
+  "amount": -1,
+  "phone": "08000000000",
+  "service": "AIRTELVTU",
+  "channel": "WEB",
+  "pin": "1234",
+  "sender_account": "",
+  "save_as_beneficiary": false
+}

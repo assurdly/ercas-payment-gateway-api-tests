@@ -1,0 +1,10 @@
+{
+  "amount": "1000.00",
+  "meter_number": "string",
+  "disco": "string",
+  "service_type": "string",
+  "channel": "WEB",
+  "pin": "1234",
+  "sender_account": "",
+  "save_as_beneficiary": false
+}

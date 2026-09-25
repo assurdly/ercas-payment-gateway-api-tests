@@ -1,0 +1,1 @@
+{"type":"validation_error","code":"invalid","message":"This password is too short. It must contain at least 8 characters.","field_name":"password"}

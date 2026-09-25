@@ -1,0 +1,1 @@
+{"success":true,"data":{"time_till_next_draw":{"days":1,"hours":1,"minutes":59,"seconds":20},"gift_ids":[],"rewards":{"total":16,"accrued":0},"description":"Create a supalock saving of over #100,000 per month to stand a chance of winning a cash token, or perform up to 10 transactions per week and maintain an average balance of #10,000 to stand a chance of winning a cash token"}}

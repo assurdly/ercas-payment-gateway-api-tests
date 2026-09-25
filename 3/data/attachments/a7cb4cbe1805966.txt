@@ -1,0 +1,9 @@
+{
+  "amount": "",
+  "phone": "",
+  "service": "",
+  "channel": "",
+  "pin": "",
+  "sender_account": "",
+  "save_as_beneficiary": ""
+}
