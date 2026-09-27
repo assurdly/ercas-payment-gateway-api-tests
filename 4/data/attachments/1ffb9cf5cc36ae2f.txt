@@ -1,0 +1,1 @@
+{"type":"validation_error","code":"invalid","message":"You need to provide one of BVN or NIN to proceed","field_name":"nin"}

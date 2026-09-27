@@ -1,0 +1,1 @@
+{"type":"validation_error","code":"min_length","message":"Ensure this field has at least 7 characters.","field_name":"otp"}

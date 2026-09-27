@@ -1,0 +1,1 @@
+{"type":"validation_error","code":"invalid","message":"An error occurred while fetching coin redemption rules","field_name":"rules"}

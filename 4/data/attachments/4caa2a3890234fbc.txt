@@ -1,0 +1,1 @@
+{"type":"validation_error","code":"invalid","message":"An error occurred while scratching card","field_name":"rules"}

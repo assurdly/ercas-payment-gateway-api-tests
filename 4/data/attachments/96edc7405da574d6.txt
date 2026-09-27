@@ -1,0 +1,9 @@
+{
+  "created_at": "",
+  "kyc_level": "",
+  "rank": "",
+  "requirements": "",
+  "daily_limit": "",
+  "max_balance": "",
+  "single_transfer_limit": ""
+}

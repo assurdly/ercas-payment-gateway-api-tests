@@ -1,0 +1,7 @@
+{
+  "gift_id": "jxo4gaygu3u8ryjfj9y2p7e8",
+  "batch_id": "jxo4gaygu3u8ryjfj9y2p7e8",
+  "currency": "string",
+  "amount": -1,
+  "win_id": "jxo4gaygu3u8ryjfj9y2p7e8"
+}

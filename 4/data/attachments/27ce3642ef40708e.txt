@@ -1,0 +1,6 @@
+{
+  "name": "string",
+  "amount": 1000,
+  "wishlist": "string",
+  "item": "string"
+}

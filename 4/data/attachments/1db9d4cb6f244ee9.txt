@@ -1,0 +1,1 @@
+{"type":"validation_error","code":"invalid","message":"Invalid color code. Use formats like #FFF or #FFFFFF.","field_name":"error"}

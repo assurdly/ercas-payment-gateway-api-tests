@@ -1,0 +1,6 @@
+{
+  "end_date": "",
+  "title": "",
+  "description": "",
+  "items": ""
+}

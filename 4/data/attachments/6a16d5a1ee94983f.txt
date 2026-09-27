@@ -1,0 +1,5 @@
+{
+  "account_number": "",
+  "account_name": "",
+  "bank": "string"
+}

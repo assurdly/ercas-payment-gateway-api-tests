@@ -1,0 +1,7 @@
+{
+  "amount": "1000.00",
+  "narration": "string",
+  "channel": "WEB",
+  "pin": "invalid",
+  "sender_account": ""
+}

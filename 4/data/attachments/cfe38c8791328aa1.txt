@@ -1,0 +1,4 @@
+{
+  "nin": "",
+  "verification_id": ""
+}

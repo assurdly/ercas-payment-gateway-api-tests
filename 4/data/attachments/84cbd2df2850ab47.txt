@@ -1,0 +1,4 @@
+{
+  "login_pin": "1234",
+  "device_id": "qa-device-001"
+}
