@@ -1,0 +1,6 @@
+{
+  "amount": "",
+  "pin": "",
+  "swag_wallet": "",
+  "account": ""
+}

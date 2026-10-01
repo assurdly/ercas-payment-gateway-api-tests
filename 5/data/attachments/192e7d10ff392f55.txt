@@ -1,0 +1,11 @@
+{
+  "amount": "1000.00",
+  "smart_card_number": "string",
+  "service_type": "invalid_option",
+  "package_code": "string",
+  "narration": "string",
+  "channel": "WEB",
+  "pin": "1234",
+  "sender_account": "",
+  "save_as_beneficiary": false
+}

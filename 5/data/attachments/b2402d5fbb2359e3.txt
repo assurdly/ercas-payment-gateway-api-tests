@@ -1,0 +1,10 @@
+{
+  "created_at": "2026-10-01T22:11:01.748Z",
+  "merchant_id": "o32sf08try11ygngsi430l8q",
+  "terminal_id": "o32sf08try11ygngsi430l8q",
+  "merchant_name": "string",
+  "currency": "string",
+  "status": "invalid_option",
+  "card": "",
+  "user": ""
+}

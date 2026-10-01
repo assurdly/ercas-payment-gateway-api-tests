@@ -1,0 +1,12 @@
+{
+  "amount": "",
+  "pin": "",
+  "enable_interest": "",
+  "enable_auto_monthly_interest_withdrawals": "",
+  "autosave_start_date": "",
+  "enable_autosave": "",
+  "autosave_frequency": "",
+  "autosave_day_of_week": "",
+  "autosave_calendar_day": "",
+  "account": ""
+}

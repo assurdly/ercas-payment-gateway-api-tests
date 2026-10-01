@@ -1,0 +1,1 @@
+{"type": "decryption_error", "code": "decryption_error", "message": "Failed to decrypt the payload", "details": "'-' is invalid within a number, immediately after a sign character ('+' or '-'). Expected a digit ('0'-'9'). LineNumber: 0 | BytePositionInLine: 1."}

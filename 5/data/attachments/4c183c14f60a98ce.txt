@@ -1,0 +1,10 @@
+{
+  "smart_card_number": "string",
+  "service_type": "gotv",
+  "package_code": "string",
+  "narration": "string",
+  "channel": "WEB",
+  "pin": "1234",
+  "sender_account": "",
+  "save_as_beneficiary": false
+}

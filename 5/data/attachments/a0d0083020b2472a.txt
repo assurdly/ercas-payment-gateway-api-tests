@@ -1,0 +1,10 @@
+{
+  "created_at": "",
+  "merchant_id": "",
+  "terminal_id": "",
+  "merchant_name": "",
+  "currency": "",
+  "status": "",
+  "card": "",
+  "user": ""
+}

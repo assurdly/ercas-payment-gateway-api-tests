@@ -1,0 +1,9 @@
+{
+  "amount": 1000,
+  "win_id": "o32sf08try11ygngsi430l8q",
+  "currency": "string",
+  "is_customer_notify": true,
+  "is_price_redeemed": true,
+  "cashtoken_recipient": "",
+  "user": ""
+}

@@ -1,0 +1,6 @@
+{
+  "pin": "invalid",
+  "enable_email_notification": true,
+  "enable_phone_notification": true,
+  "enable_whatsapp_bot": true
+}

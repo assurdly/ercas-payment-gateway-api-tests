@@ -1,0 +1,7 @@
+{
+  "reward_name": "string",
+  "reward_type": "string",
+  "reward_value": "string",
+  "is_tangible": false,
+  "is_active": true
+}

@@ -1,0 +1,5 @@
+{
+  "email": "2348140519934@kolomoni.com",
+  "password": "Password12@@",
+  "device_id": "2348140519934"
+}
