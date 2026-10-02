@@ -1,4 +1,0 @@
-{
-  "pin": "invalid",
-  "recipient": "string"
-}

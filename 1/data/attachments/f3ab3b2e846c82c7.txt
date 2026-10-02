@@ -1,4 +1,0 @@
-{
-  "deactivation_reason": "",
-  "admin_otp": ""
-}

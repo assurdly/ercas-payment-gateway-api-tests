@@ -1,4 +1,0 @@
-{
-  "email": "not-an-email",
-  "pin": "1234"
-}

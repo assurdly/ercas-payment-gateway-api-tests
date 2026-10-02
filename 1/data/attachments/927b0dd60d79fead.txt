@@ -1,5 +1,0 @@
-{
-  "wallet": "",
-  "break_reason": "string",
-  "pin": "1234"
-}

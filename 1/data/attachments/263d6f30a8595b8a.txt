@@ -1,6 +1,0 @@
-{
-  "pin": "",
-  "account": "",
-  "provider": "",
-  "insurance": ""
-}

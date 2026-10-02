@@ -1,4 +1,0 @@
-{
-  "type": "invalid_option",
-  "customer_id": ""
-}

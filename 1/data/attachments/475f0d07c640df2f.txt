@@ -1,6 +1,0 @@
-{
-  "narration": "",
-  "channel": "",
-  "pin": "",
-  "account": ""
-}

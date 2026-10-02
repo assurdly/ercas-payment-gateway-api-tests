@@ -1,6 +1,0 @@
-{
-  "narration": "string",
-  "channel": "WEB",
-  "pin": "invalid",
-  "account": ""
-}

@@ -1,4 +1,0 @@
-{
-  "total_coins": "",
-  "redemption_rule_id": ""
-}
