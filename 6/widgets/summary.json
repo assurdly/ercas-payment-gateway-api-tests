@@ -1,1 +1,1 @@
-{"reportName":"ERCAS Merchant APIs - Quality Readiness with history","testRuns":[],"statistic":{"failed":53,"broken":0,"skipped":0,"passed":8,"unknown":0,"total":61},"time":{"start":1787966376639,"stop":1787966389741,"duration":13102,"minDuration":162,"maxDuration":1239,"sumDuration":12892}}
+{"reportName":"Allure Report with history","testRuns":[],"statistic":{"failed":807,"broken":0,"skipped":0,"passed":770,"unknown":0,"total":1577},"time":{"start":1790977105572,"stop":1790977332647,"duration":227075,"minDuration":116,"maxDuration":1618,"sumDuration":222208}}

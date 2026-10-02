@@ -1,3 +1,0 @@
-{
-  "redemption_rule_id": "yhk04mzua8phopl1lx75qqzr"
-}
