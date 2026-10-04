@@ -1,0 +1,12 @@
+{
+    "Accept": "application/json",
+    "X-Api-Key": "duJqtMUf.B6XYCxSGCO985QOWdGAnMYP3uicpeZa9",
+    "Content-Type": "application/json",
+    "User-Agent": "PostmanRuntime/7.39.1",
+    "Cache-Control": "no-cache",
+    "Postman-Token": "87cfc35c-fca5-4142-a611-ead8a1a16c44",
+    "Host": "dev.personal-banking.kolomoni.net",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Connection": "keep-alive",
+    "Content-Length": "187"
+}

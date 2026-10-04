@@ -1,4 +1,0 @@
-{
-  "otp": "000000",
-  "gatewayReference": ""
-}

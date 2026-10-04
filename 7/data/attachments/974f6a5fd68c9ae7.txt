@@ -1,0 +1,4 @@
+{
+  "total_coins": 1,
+  "redemption_rule_id": "icv4vv09j6lnus1fegx3u5sp"
+}

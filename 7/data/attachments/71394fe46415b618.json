@@ -1,0 +1,11 @@
+{
+    "Accept": "application/json",
+    "X-Api-Key": "duJqtMUf.B6XYCxSGCO985QOWdGAnMYP3uicpeZa9",
+    "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzkxMTQ0ODcxLCJpYXQiOjE3OTExNDEyNzEsImp0aSI6IjQ0M2M2ODczOTFhNzRlMTE5NDI2MzRhOGRmOTZiNTg4IiwidXNlcl9pZCI6ImtzbjVyaGFrMWh6OHM0cTh3MHE4eDNyZSIsImlkIjoia3NuNXJoYWsxaHo4czRxOHcwcTh4M3JlIiwiZW1haWwiOiIyMzQ4MTQwNTE5OTM0QGtvbG9tb25pLmNvbSIsImZpcnN0bmFtZSI6Ik1hcnkiLCJsYXN0bmFtZSI6IkRhdmlzIiwicGhvbmUiOiIyMzQ4MTQwNTE5OTM0Iiwic3RhZ2UiOiJDT01QTEVURUQiLCJzZXNzaW9uX2lkIjoiZTkyYzdjMWYzZDk5NDIxNGE5MmMzNWE1ZmMyN2I2NDAiLCJyb2xlIjoiQ3VzdG9tZXIifQ.zns_b0zubu6nuFD1mIL-Nvid0w2uq-P0YjTN1bFY9dk",
+    "User-Agent": "PostmanRuntime/7.39.1",
+    "Cache-Control": "no-cache",
+    "Postman-Token": "a447a47b-fcb2-4fd6-9480-ee1751000c1b",
+    "Host": "dev.personal-banking.kolomoni.net",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Connection": "keep-alive"
+}

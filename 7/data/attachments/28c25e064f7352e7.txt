@@ -1,0 +1,9 @@
+{
+  "merchant_id": "icv4vv09j6lnus1fegx3u5sp",
+  "terminal_id": "icv4vv09j6lnus1fegx3u5sp",
+  "merchant_name": "string",
+  "currency": "string",
+  "status": "ACTIVE",
+  "card": "",
+  "user": ""
+}

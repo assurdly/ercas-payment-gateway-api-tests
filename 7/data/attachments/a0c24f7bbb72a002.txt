@@ -1,0 +1,7 @@
+{
+  "gift_id": "icv4vv09j6lnus1fegx3u5sp",
+  "batch_id": "icv4vv09j6lnus1fegx3u5sp",
+  "currency": "string",
+  "amount": -1,
+  "win_id": "icv4vv09j6lnus1fegx3u5sp"
+}

@@ -1,0 +1,10 @@
+{
+  "created_at": "2026-10-04T19:17:22.635Z",
+  "merchant_id": "icv4vv09j6lnus1fegx3u5sp",
+  "terminal_id": "icv4vv09j6lnus1fegx3u5sp",
+  "merchant_name": "string",
+  "currency": "string",
+  "status": "ACTIVE",
+  "card": "",
+  "user": ""
+}
