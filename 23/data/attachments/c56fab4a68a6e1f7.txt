@@ -1,0 +1,23 @@
+{
+  "payload": "",
+  "transactionReference": "",
+  "isCardTokenized": true,
+  "deviceDetails": {
+    "payerDeviceDto": {
+      "device": {
+        "browser": "Mozilla/5.0 QA Browser",
+        "browserDetails": {
+          "3DSecureChallengeWindowSize": "FULL_SCREEN",
+          "acceptHeaders": "application/json",
+          "colorDepth": 24,
+          "javaEnabled": true,
+          "language": "en-US",
+          "screenHeight": 900,
+          "screenWidth": 1440,
+          "timeZone": 0
+        },
+        "ipAddress": "127.0.0.1"
+      }
+    }
+  }
+}
