@@ -1,0 +1,1 @@
+{"type":"client_error","code":"bad_request","message":"Your account doesn't have an NIN or BVN on it, please contact support to regularize your account","field_name":"nin"}

@@ -1,0 +1,9 @@
+{
+  "amount": "1000.00",
+  "name": "string",
+  "type": "string",
+  "channel": "WEB",
+  "pin": "invalid",
+  "sender_account": "",
+  "customer_id": ""
+}

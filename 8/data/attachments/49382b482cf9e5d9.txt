@@ -1,0 +1,9 @@
+{
+  "amount": 1000,
+  "win_id": "kvy5a7dme429puthc0igxasx",
+  "currency": "string",
+  "is_customer_notify": true,
+  "is_price_redeemed": true,
+  "cashtoken_recipient": "",
+  "user": ""
+}

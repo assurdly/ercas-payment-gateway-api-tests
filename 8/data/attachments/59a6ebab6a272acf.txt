@@ -1,0 +1,4 @@
+{
+  "email": "qa.personal-banking@example.com",
+  "pin": "1234"
+}

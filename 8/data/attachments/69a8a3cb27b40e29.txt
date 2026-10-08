@@ -1,0 +1,5 @@
+{
+  "email": "qa.personal-banking@example.com",
+  "token": "invalid",
+  "password": "invalid"
+}

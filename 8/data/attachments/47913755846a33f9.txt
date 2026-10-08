@@ -1,0 +1,4 @@
+{
+  "smart_card_number": "string",
+  "service_type": "string"
+}

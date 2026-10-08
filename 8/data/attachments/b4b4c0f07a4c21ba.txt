@@ -1,0 +1,7 @@
+{
+  "amount": "",
+  "narration": "",
+  "channel": "",
+  "pin": "",
+  "sender_account": ""
+}

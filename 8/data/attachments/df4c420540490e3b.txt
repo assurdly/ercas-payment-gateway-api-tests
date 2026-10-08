@@ -1,0 +1,1 @@
+{"type":"validation_error","code":"invalid_choice","message":"\"invalid_option\" is not a valid choice.","field_name":"product_type"}

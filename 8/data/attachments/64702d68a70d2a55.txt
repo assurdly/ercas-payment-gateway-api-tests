@@ -1,0 +1,1 @@
+{"success":true,"message":"An OTP has been sent to your email or phone if your account exist with us."}

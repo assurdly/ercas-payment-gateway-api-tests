@@ -1,0 +1,14 @@
+{
+  "activity_type": "",
+  "activity_class": "",
+  "activity_sub_class": "",
+  "activity_description": "",
+  "minimum_amount": "",
+  "minimum_count": "",
+  "client": "",
+  "coins": "",
+  "frequency": "",
+  "limit_per_period": "",
+  "description": "",
+  "is_active": ""
+}
