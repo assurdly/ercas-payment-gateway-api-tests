@@ -1,9 +1,0 @@
-{
-  "amount": "",
-  "profile_code": "",
-  "exam_type": "",
-  "narration": "",
-  "channel": "",
-  "pin": "",
-  "sender_account": ""
-}

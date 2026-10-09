@@ -1,1 +1,0 @@
-{"id":"rgy5xystqarzs99tq6twlbi4","created_at":"2026-09-27T20:36:11.811692+01:00","updated_at":"2026-09-27T20:36:11.811692+01:00","product_type":"","provider_name":""}

@@ -1,5 +1,0 @@
-{
-  "nin": "",
-  "bvn": "",
-  "verification_id": ""
-}

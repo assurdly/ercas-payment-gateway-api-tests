@@ -1,4 +1,0 @@
-{
-  "meter_number": "",
-  "service_type": ""
-}

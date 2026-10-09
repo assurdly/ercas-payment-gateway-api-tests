@@ -1,9 +1,0 @@
-{
-  "amount": "",
-  "name": "",
-  "type": "",
-  "channel": "",
-  "pin": "",
-  "sender_account": "",
-  "customer_id": ""
-}

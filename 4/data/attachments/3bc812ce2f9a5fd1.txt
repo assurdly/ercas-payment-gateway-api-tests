@@ -1,6 +1,0 @@
-{
-  "amount": -1,
-  "customer": "",
-  "info": "string",
-  "reference": "string"
-}

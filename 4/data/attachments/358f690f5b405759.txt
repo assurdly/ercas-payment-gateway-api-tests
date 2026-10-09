@@ -1,5 +1,0 @@
-{
-  "account": "",
-  "provider": "",
-  "insurance": "string"
-}

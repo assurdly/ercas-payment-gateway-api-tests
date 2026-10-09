@@ -1,5 +1,0 @@
-{
-  "duration": 1,
-  "duration_type": "invalid_option",
-  "target_amount": "1000.00"
-}

@@ -1,6 +1,0 @@
-{
-  "amount": "",
-  "pin": "",
-  "wallet": "",
-  "account": ""
-}

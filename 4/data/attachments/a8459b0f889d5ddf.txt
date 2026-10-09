@@ -1,3 +1,0 @@
-{
-  "email": "qa.personal-banking@example.com"
-}

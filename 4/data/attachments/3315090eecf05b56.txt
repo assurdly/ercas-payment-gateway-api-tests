@@ -1,3 +1,0 @@
-{
-  "verification_log_id": ""
-}

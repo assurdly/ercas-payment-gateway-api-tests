@@ -1,4 +1,0 @@
-{
-  "deactivation_reason": "string",
-  "admin_otp": "123456"
-}

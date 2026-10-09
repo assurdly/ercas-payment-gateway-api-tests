@@ -1,4 +1,0 @@
-{
-  "activation_reason": "string",
-  "admin_otp": "invalid"
-}

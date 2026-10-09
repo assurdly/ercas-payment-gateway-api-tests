@@ -1,4 +1,0 @@
-{
-  "action": "",
-  "rejection_message": ""
-}

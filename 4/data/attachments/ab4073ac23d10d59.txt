@@ -1,4 +1,0 @@
-{
-  "wallet": "",
-  "enable_auto_monthly_interest_withdrawals": true
-}

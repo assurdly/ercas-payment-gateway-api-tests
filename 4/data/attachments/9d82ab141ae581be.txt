@@ -1,8 +1,0 @@
-{
-  "account": "",
-  "impact_transaction_type": "",
-  "debit_percentage": "",
-  "debit_cap": "",
-  "duration": "",
-  "pin": ""
-}

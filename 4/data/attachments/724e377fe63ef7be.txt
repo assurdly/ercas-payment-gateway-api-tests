@@ -1,6 +1,0 @@
-{
-  "amount": "1000.00",
-  "is_full_repayment": false,
-  "external_reference": "string",
-  "pin": "1234"
-}

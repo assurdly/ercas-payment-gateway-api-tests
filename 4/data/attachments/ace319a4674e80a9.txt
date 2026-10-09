@@ -1,5 +1,0 @@
-{
-  "email": "qa.personal-banking@example.com",
-  "token": "",
-  "password": "ChangeMe123!"
-}
