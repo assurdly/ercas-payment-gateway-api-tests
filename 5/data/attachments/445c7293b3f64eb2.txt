@@ -1,7 +1,0 @@
-{
-  "gift_id": "o32sf08try11ygngsi430l8q",
-  "batch_id": "o32sf08try11ygngsi430l8q",
-  "currency": "string",
-  "amount": -1,
-  "win_id": "o32sf08try11ygngsi430l8q"
-}

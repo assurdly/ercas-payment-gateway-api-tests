@@ -1,7 +1,0 @@
-{
-  "cardTokenUUID": "",
-  "amount": -1,
-  "currency": "NGN",
-  "paymentReference": "QA-1787882604003-{{$randomInt}",
-  "redirectUrl": "https://example.com/payments/callback"
-}

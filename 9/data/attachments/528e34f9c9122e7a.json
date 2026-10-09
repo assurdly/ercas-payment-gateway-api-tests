@@ -1,0 +1,15 @@
+{
+    "Content-Type": "application/json",
+    "Transfer-Encoding": "chunked",
+    "Connection": "keep-alive",
+    "Date": "Fri, 09 Oct 2026 22:06:27 GMT",
+    "Server": "Kestrel",
+    "X-Request-Id": "85c4d3db-5912-4ff4-8a8c-b47cef540b2f",
+    "vary": "Origin",
+    "Access-Control-Allow-Credentials": "true",
+    "Access-Control-Expose-Headers": "X-Auth-Token,X-RateLimit-Remaining",
+    "X-Kong-Upstream-Latency": "7",
+    "X-Kong-Proxy-Latency": "20",
+    "Via": "1.1 kong/3.9.3",
+    "X-Kong-Request-Id": "7198de5a52a6cd30c3b8750a4fc3ca1f"
+}
