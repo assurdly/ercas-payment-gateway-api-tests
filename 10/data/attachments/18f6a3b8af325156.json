@@ -1,0 +1,12 @@
+{
+    "Date": "Sun, 11 Oct 2026 19:57:51 GMT",
+    "Content-Type": "application/json; charset=utf-8",
+    "Connection": "keep-alive",
+    "Content-Length": "113",
+    "vary": "Origin",
+    "Access-Control-Allow-Credentials": "true",
+    "Access-Control-Expose-Headers": "X-Auth-Token,X-RateLimit-Remaining",
+    "X-Kong-Response-Latency": "1",
+    "Server": "kong/3.9.3",
+    "X-Kong-Request-Id": "ec0a59671b5ae107103dd65c5f2d7b44"
+}

@@ -1,1 +1,0 @@
-{"success":true,"data":{"leaderboard":[{"rank":1,"user_id":"h88tzbdsh45ezn20q5ha0etj","name":"Robert Williams","referrals":1}],"current_user":null}}
