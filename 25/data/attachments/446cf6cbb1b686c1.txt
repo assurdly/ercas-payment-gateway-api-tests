@@ -1,0 +1,4 @@
+{
+  "payment_method": "unsupported-method",
+  "reference": ""
+}
