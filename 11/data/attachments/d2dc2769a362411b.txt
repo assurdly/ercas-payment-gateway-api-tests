@@ -1,0 +1,3 @@
+{
+  "redemption_rule_id": "j1e2racsv4wl0kkymgil75pf"
+}

@@ -1,0 +1,11 @@
+{
+  "amount": "",
+  "smart_card_number": "",
+  "service_type": "",
+  "package_code": "",
+  "narration": "",
+  "channel": "",
+  "pin": "",
+  "sender_account": "",
+  "save_as_beneficiary": ""
+}

@@ -1,0 +1,13 @@
+{
+  "activity_class": "ACCOUNT_CREATION",
+  "activity_sub_class": "AIRTIME",
+  "activity_description": "string",
+  "minimum_amount": 1000,
+  "minimum_count": 1,
+  "client": 1,
+  "coins": 1,
+  "frequency": "UNLIMITED",
+  "limit_per_period": 1000,
+  "description": "string",
+  "is_active": true
+}

@@ -1,0 +1,1 @@
+{"type":"client_error","code":"bad_request","message":"Only customers on tier 2 are allowed","field_name":"tier_rank"}

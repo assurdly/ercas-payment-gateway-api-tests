@@ -1,0 +1,8 @@
+{
+  "coins_required": "",
+  "reward_name": "",
+  "reward_type": "",
+  "reward_value": "",
+  "is_tangible": "",
+  "is_active": ""
+}

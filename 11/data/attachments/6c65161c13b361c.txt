@@ -1,0 +1,4 @@
+{
+  "meter_number": "string",
+  "service_type": "string"
+}

@@ -1,0 +1,13 @@
+{
+  "account": "",
+  "delivery_method": "",
+  "phone": "",
+  "house_number": "",
+  "street": "",
+  "city": "",
+  "state": "",
+  "local_government": "",
+  "nearest_landmark": "",
+  "branch": "",
+  "pin": ""
+}
