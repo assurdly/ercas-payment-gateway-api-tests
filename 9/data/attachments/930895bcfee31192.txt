@@ -1,4 +1,0 @@
-{
-  "token": "",
-  "password": "ChangeMe123!"
-}

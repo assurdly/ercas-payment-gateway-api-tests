@@ -1,8 +1,0 @@
-{
-  "unit_amount": 1000,
-  "quantity": 1000,
-  "network": "string",
-  "channel": "WEB",
-  "pin": "invalid",
-  "sender_account": ""
-}

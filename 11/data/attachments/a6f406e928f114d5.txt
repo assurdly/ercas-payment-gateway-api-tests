@@ -1,4 +1,0 @@
-{
-  "account": "",
-  "amount": -1
-}

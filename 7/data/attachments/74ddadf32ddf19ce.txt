@@ -1,6 +1,0 @@
-{
-  "batch_id": "icv4vv09j6lnus1fegx3u5sp",
-  "currency": "string",
-  "amount": 1000,
-  "win_id": "icv4vv09j6lnus1fegx3u5sp"
-}

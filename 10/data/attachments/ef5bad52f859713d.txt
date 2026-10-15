@@ -1,4 +1,0 @@
-{
-  "pin": "invalid",
-  "withdrawal_reason": "string"
-}

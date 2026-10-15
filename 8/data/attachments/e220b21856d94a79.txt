@@ -1,6 +1,0 @@
-{
-  "info": "string",
-  "reference": "string",
-  "amount": 1000,
-  "customer": ""
-}

@@ -1,4 +1,0 @@
-{
-  "message":"failure to get a peer from the ring-balancer",
-  "request_id":"cf3a2177d4cfd21dc0767532c0eb7747"
-}

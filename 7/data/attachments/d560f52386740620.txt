@@ -1,4 +1,0 @@
-{
-  "smart_card_number": "",
-  "service_type": ""
-}

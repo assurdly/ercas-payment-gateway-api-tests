@@ -1,6 +1,0 @@
-{
-  "created_at": "",
-  "account_number": "",
-  "max_amount_for_suspension": "",
-  "max_number_of_items": ""
-}

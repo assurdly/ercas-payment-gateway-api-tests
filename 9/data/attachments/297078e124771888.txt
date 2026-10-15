@@ -1,5 +1,0 @@
-{
-  "type": "string",
-  "phone_number": "08000000000",
-  "profile_code": "string"
-}

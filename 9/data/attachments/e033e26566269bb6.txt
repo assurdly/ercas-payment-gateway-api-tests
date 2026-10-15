@@ -1,2 +1,0 @@
-pm.collectionVariables.set("runTimestamp", new Date().toISOString());
-if (!pm.collectionVariables.get("maxResponseTimeMs")) pm.collectionVariables.set("maxResponseTimeMs", "5000");

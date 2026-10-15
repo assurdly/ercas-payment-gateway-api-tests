@@ -1,1 +1,0 @@
-{"id":"sf4gz81sbhaosom9iodcrss6","created_at":"2026-10-15T21:45:50.113099+01:00","updated_at":"2026-10-15T21:45:50.113099+01:00","product_type":"","provider_name":""}

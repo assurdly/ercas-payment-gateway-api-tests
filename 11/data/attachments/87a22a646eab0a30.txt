@@ -1,5 +1,0 @@
-{
-  "state": "",
-  "local_government": "",
-  "address": ""
-}

@@ -1,6 +1,0 @@
-{
-  "pin": "invalid",
-  "account": "",
-  "provider": "",
-  "insurance": "string"
-}

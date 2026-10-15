@@ -1,4 +1,0 @@
-{
-  "activation_reason": "",
-  "admin_otp": ""
-}

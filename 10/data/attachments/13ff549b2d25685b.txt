@@ -1,5 +1,0 @@
-{
-  "token": "invalid",
-  "token_type": "invalid",
-  "email": "qa.personal-banking@example.com"
-}

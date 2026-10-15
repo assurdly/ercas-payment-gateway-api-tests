@@ -1,8 +1,0 @@
-{
-  "profile_code": "string",
-  "exam_type": "string",
-  "narration": "string",
-  "channel": "WEB",
-  "pin": "1234",
-  "sender_account": ""
-}

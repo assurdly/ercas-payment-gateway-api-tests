@@ -1,5 +1,0 @@
-{
-  "pin": "",
-  "fund_request": "",
-  "rejection_reason": ""
-}

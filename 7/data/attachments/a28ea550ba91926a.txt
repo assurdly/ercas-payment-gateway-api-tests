@@ -1,6 +1,0 @@
-{
-  "recipient_account_number": "",
-  "narration": "",
-  "amount": "",
-  "pin": ""
-}

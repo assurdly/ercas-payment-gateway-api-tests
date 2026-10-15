@@ -1,9 +1,0 @@
-{
-  "amount": "1000.00",
-  "profile_code": "string",
-  "exam_type": "string",
-  "narration": "string",
-  "channel": "WEB",
-  "pin": "invalid",
-  "sender_account": ""
-}

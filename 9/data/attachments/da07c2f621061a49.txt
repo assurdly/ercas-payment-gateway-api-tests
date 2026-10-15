@@ -1,4 +1,0 @@
-{
-  "pin": "1234",
-  "fund_request": "string"
-}

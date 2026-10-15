@@ -1,6 +1,0 @@
-{
-  "amount": "",
-  "is_full_repayment": "",
-  "external_reference": "",
-  "pin": ""
-}

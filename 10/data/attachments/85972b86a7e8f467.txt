@@ -1,7 +1,0 @@
-{
-  "gift_id": "jio1ox36i5xqb3mj3mfdkdyu",
-  "batch_id": "jio1ox36i5xqb3mj3mfdkdyu",
-  "currency": "string",
-  "amount": 1000,
-  "win_id": "jio1ox36i5xqb3mj3mfdkdyu"
-}

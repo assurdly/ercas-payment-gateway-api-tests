@@ -1,6 +1,0 @@
-{
-  "pin": "",
-  "enable_email_notification": "",
-  "enable_phone_notification": "",
-  "enable_whatsapp_bot": ""
-}

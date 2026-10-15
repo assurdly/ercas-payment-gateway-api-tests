@@ -1,4 +1,0 @@
-{
-  "customer": "",
-  "admin_otp": ""
-}

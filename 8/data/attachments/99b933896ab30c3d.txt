@@ -1,3 +1,0 @@
-{
-  "display_color": "string"
-}

@@ -1,1 +1,0 @@
-{"id":"uh3msy20zcjl93sppyd36bna","created_at":"2026-10-11T20:58:05.862736+01:00","updated_at":"2026-10-11T20:58:05.862736+01:00","product_type":"","provider_name":""}
