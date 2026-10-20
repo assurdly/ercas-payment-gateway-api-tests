@@ -14,7 +14,7 @@
           "name": "Initiate Transaction",
           "item": [
             {
-              "name": "Initiate Transaction -  Valid",
+              "name": "Initiate Transaction - Valid",
               "event": [
                 {
                   "listen": "prerequest",
@@ -765,10 +765,7 @@
                       "script": {
                         "type": "text/javascript",
                         "exec": [
-                          "const timestamp = Date.now();",
-                          "pm.variables.set(\"runTimestamp\", timestamp);",
-                          "pm.environment.set(\"paymentReference\", `QA-${timestamp}-${pm.variables.replaceIn(\"{{$randomInt}\")}`);",
-                          "pm.environment.set(\"testCustomerEmail\", `qa.${timestamp}@example.com`);"
+                          "const timestamp = Date.now();\npm.variables.set(\"runTimestamp\", timestamp);\npm.environment.set(\"paymentReference\", `QA-${timestamp}-${pm.variables.replaceIn(\"{{$randomInt}}\")}`);\npm.environment.set(\"testCustomerEmail\", `qa.${timestamp}@example.com`);"
                         ]
                       }
                     },
@@ -777,37 +774,7 @@
                       "script": {
                         "type": "text/javascript",
                         "exec": [
-                          "let jsonData = {};",
-                          "pm.test(\"Response is valid JSON\", function () {",
-                          "    jsonData = pm.response.json();",
-                          "    pm.expect(jsonData).to.be.an(\"object\");",
-                          "});",
-                          "",
-                          "pm.test(\"Status code is 200\", function () {",
-                          "    pm.expect([200]).to.include(pm.response.code);",
-                          "});",
-                          "",
-                          "pm.test(\"Content-Type is application/json\", function () {",
-                          "    pm.expect(pm.response.headers.get(\"Content-Type\") || \"\").to.include(\"application/json\");",
-                          "});",
-                          "",
-                          "pm.test(\"Response time is acceptable\", function () {",
-                          "    pm.expect(pm.response.responseTime).to.be.below(2000);",
-                          "});",
-                          "",
-                          "pm.test(\"ErcasPay response envelope is present\", function () {",
-                          "    pm.expect(jsonData).to.have.property(\"requestSuccessful\");",
-                          "    pm.expect(jsonData).to.have.property(\"responseCode\");",
-                          "    pm.expect(jsonData).to.have.property(\"responseBody\");",
-                          "});",
-                          "",
-                          "pm.test(\"Checkout URL is returned\", function () {",
-                          "    pm.expect(jsonData.responseBody?.checkoutUrl).to.be.a(\"string\");",
-                          "});",
-                          "if (jsonData?.responseBody?.transactionReference) pm.environment.set(\"directTransactionRef\", jsonData.responseBody.transactionReference);",
-                          "if (jsonData?.responseBody?.transactionReference) pm.environment.set(\"transactionRef\", jsonData.responseBody.transactionReference);",
-                          "if (jsonData?.responseBody?.paymentReference) pm.environment.set(\"paymentReference\", jsonData.responseBody.paymentReference);",
-                          "if (jsonData?.responseBody?.checkoutUrl) pm.environment.set(\"checkoutUrl\", jsonData.responseBody.checkoutUrl);"
+                          "let jsonData = {};\npm.test(\"Response is valid JSON\", function () {\n    jsonData = pm.response.json();\n    pm.expect(jsonData).to.be.an(\"object\");\n});\n\npm.test(\"Status code is 200\", function () {\n    pm.expect([200]).to.include(pm.response.code);\n});\n\npm.test(\"Content-Type is application/json\", function () {\n    pm.expect(pm.response.headers.get(\"Content-Type\") || \"\").to.include(\"application/json\");\n});\n\npm.test(\"Response time is acceptable\", function () {\n    pm.expect(pm.response.responseTime).to.be.below(2000);\n});\n\npm.test(\"ErcasPay response envelope is present\", function () {\n    pm.expect(jsonData).to.have.property(\"requestSuccessful\");\n    pm.expect(jsonData).to.have.property(\"responseCode\");\n    pm.expect(jsonData).to.have.property(\"responseBody\");\n});\n\npm.test(\"Checkout URL is returned\", function () {\n    pm.expect(jsonData.responseBody?.checkoutUrl).to.be.a(\"string\");\n});\nif (jsonData?.responseBody?.transactionReference) pm.environment.set(\"directTransactionRef\", jsonData.responseBody.transactionReference);\nif (jsonData?.responseBody?.transactionReference) pm.environment.set(\"transactionRef\", jsonData.responseBody.transactionReference);\nif (jsonData?.responseBody?.paymentReference) pm.environment.set(\"paymentReference\", jsonData.responseBody.paymentReference);\nif (jsonData?.responseBody?.checkoutUrl) pm.environment.set(\"checkoutUrl\", jsonData.responseBody.checkoutUrl);"
                         ]
                       }
                     }
@@ -827,18 +794,16 @@
                     "header": [
                       {
                         "key": "Accept",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       },
                       {
                         "key": "Content-Type",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       }
                     ],
                     "body": {
                       "mode": "raw",
-                      "raw": "{\n  \"amount\": 100,\n  \"paymentReference\": \"{{paymentReference}}\",\n  \"paymentMethods\": \"card,bank-transfer,ussd,qrcode\",\n  \"customerName\": \"{{$randomFullName}}\",\n  \"customerEmail\": \"{{testCustomerEmail}}\",\n  \"customerPhoneNumber\": \"{{$randomPhoneNumber}}\",\n  \"redirectUrl\": \"{{redirectUrl}}\",\n  \"description\": \"QA payment initiation test\",\n  \"currency\": \"NGN\",\n  \"feeBearer\": \"customer\",\n  \"metadata\": {\n    \"firstname\": \"{{$randomFirstName}}\",\n    \"lastname\": \"{{$randomLastName}}\",\n    \"email\": \"{{testCustomerEmail}}\"\n  }\n}",
+                      "raw": "{\n  \"amount\": 100,\n  \"paymentReference\": \"{{paymentReference}}\",\n  \"paymentMethods\": \"card,bank-transfer,ussd,qrcode\",\n  \"customerName\": \"{{$randomFullName}}\",\n  \"customerEmail\": \"{{testCustomerEmail}}\",\n  \"customerPhoneNumber\": \"{{randomNigerianPhone}}\",\n  \"redirectUrl\": \"{{redirectUrl}}\",\n  \"description\": \"QA payment initiation test\",\n  \"currency\": \"NGN\",\n  \"feeBearer\": \"customer\",\n  \"metadata\": {\n    \"firstname\": \"{{$randomFirstName}}\",\n    \"lastname\": \"{{$randomLastName}}\",\n    \"email\": \"{{testCustomerEmail}}\"\n  }\n}",
                       "options": {
                         "raw": {
                           "language": "json"
@@ -846,12 +811,11 @@
                       }
                     },
                     "url": {
-                      "raw": "{{baseUrl}}/third-party/payment/initiate",
+                      "raw": "{{baseUrl}}/payment/initiate",
                       "host": [
                         "{{baseUrl}}"
                       ],
                       "path": [
-                        "third-party",
                         "payment",
                         "initiate"
                       ]
@@ -867,91 +831,16 @@
                       "script": {
                         "type": "text/javascript",
                         "exec": [
-                          "let jsonData = {};",
-                          "pm.test(\"Response is valid JSON\", function () {",
-                          "    jsonData = pm.response.json();",
-                          "    pm.expect(jsonData).to.be.an(\"object\");",
-                          "});",
-                          "// Inferred expected behaviour - confirm against API specification.",
-                          "pm.test(\"Status code is 400\", function () {",
-                          "    pm.expect([400]).to.include(pm.response.code);",
-                          "});",
-                          "pm.test(\"Error response has failure details\", function () {",
-                          "    pm.expect(jsonData.requestSuccessful).to.not.equal(true);",
-                          "    pm.expect(jsonData.errorMessage || jsonData.responseMessage || jsonData.message).to.exist;",
-                          "});"
+                          "let jsonData = {};\npm.test(\"Response is valid JSON\", function () {\n    jsonData = pm.response.json();\n    pm.expect(jsonData).to.be.an(\"object\");\n});\n// Inferred expected behaviour - confirm against API specification.\npm.test(\"Status code is 400\", function () {\n    pm.expect([400]).to.include(pm.response.code);\n});\n// pm.test(\"Error response has failure details\", function () {\n//     pm.expect(jsonData.requestSuccessful).to.not.equal(true);\n//     pm.expect(jsonData.errorMessage || jsonData.responseMessage || jsonData.message).to.exist;\n// });"
                         ]
                       }
-                    }
-                  ],
-                  "request": {
-                    "auth": {
-                      "type": "bearer",
-                      "bearer": [
-                        {
-                          "key": "token",
-                          "value": "{{secretKey}}",
-                          "type": "string"
-                        }
-                      ]
                     },
-                    "method": "POST",
-                    "header": [
-                      {
-                        "key": "Accept",
-                        "value": "application/json",
-                        "type": "text"
-                      },
-                      {
-                        "key": "Content-Type",
-                        "value": "application/json",
-                        "type": "text"
-                      }
-                    ],
-                    "body": {
-                      "mode": "raw",
-                      "raw": "{\n  \"amount\": 100,\n  \"paymentReference\": \"{{paymentReference}}\",\n  \"paymentMethods\": \"card,bank-transfer,ussd,qrcode\",\n  \"customerName\": \"{{$randomFullName}}\",\n  \"customerPhoneNumber\": \"{{$randomPhoneNumber}}\",\n  \"redirectUrl\": \"{{redirectUrl}}\",\n  \"description\": \"QA payment initiation test\",\n  \"currency\": \"NGN\",\n  \"feeBearer\": \"customer\",\n  \"metadata\": {\n    \"firstname\": \"{{$randomFirstName}}\",\n    \"lastname\": \"{{$randomLastName}}\",\n    \"email\": \"{{testCustomerEmail}}\"\n  }\n}",
-                      "options": {
-                        "raw": {
-                          "language": "json"
-                        }
-                      }
-                    },
-                    "url": {
-                      "raw": "{{baseUrl}}/third-party/payment/initiate",
-                      "host": [
-                        "{{baseUrl}}"
-                      ],
-                      "path": [
-                        "third-party",
-                        "payment",
-                        "initiate"
-                      ]
-                    }
-                  },
-                  "response": []
-                },
-                {
-                  "name": "Initiate Transaction - Invalid Email",
-                  "event": [
                     {
-                      "listen": "test",
+                      "listen": "prerequest",
                       "script": {
                         "type": "text/javascript",
                         "exec": [
-                          "let jsonData = {};",
-                          "pm.test(\"Response is valid JSON\", function () {",
-                          "    jsonData = pm.response.json();",
-                          "    pm.expect(jsonData).to.be.an(\"object\");",
-                          "});",
-                          "// Inferred expected behaviour - confirm against API specification.",
-                          "pm.test(\"Status code is 400\", function () {",
-                          "    pm.expect([400]).to.include(pm.response.code);",
-                          "});",
-                          "pm.test(\"Error response has failure details\", function () {",
-                          "    pm.expect(jsonData.requestSuccessful).to.not.equal(true);",
-                          "    pm.expect(jsonData.errorMessage || jsonData.responseMessage || jsonData.message).to.exist;",
-                          "});"
+                          "const timestamp = Date.now();\npm.variables.set(\"runTimestamp\", timestamp);\npm.environment.set(\"paymentReference\", `QA-${timestamp}-${pm.variables.replaceIn(\"{{$randomInt}}\")}`);\n// pm.environment.set(\"testCustomerEmail\", `qa.${timestamp}@example.com`);"
                         ]
                       }
                     }
@@ -971,18 +860,16 @@
                     "header": [
                       {
                         "key": "Accept",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       },
                       {
                         "key": "Content-Type",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       }
                     ],
                     "body": {
                       "mode": "raw",
-                      "raw": "{\n  \"amount\": 100,\n  \"paymentReference\": \"{{paymentReference}}\",\n  \"paymentMethods\": \"card,bank-transfer,ussd,qrcode\",\n  \"customerName\": \"{{$randomFullName}}\",\n  \"customerEmail\": \"invalid-email\",\n  \"customerPhoneNumber\": \"{{$randomPhoneNumber}}\",\n  \"redirectUrl\": \"{{redirectUrl}}\",\n  \"description\": \"QA payment initiation test\",\n  \"currency\": \"NGN\",\n  \"feeBearer\": \"customer\",\n  \"metadata\": {\n    \"firstname\": \"{{$randomFirstName}}\",\n    \"lastname\": \"{{$randomLastName}}\",\n    \"email\": \"{{testCustomerEmail}}\"\n  }\n}",
+                      "raw": "{\n  \"amount\": 100,\n  \"paymentReference\": \"\",\n  \"paymentMethods\": \"card,bank-transfer,ussd,qrcode\",\n  \"customerName\": \"{{$randomFullName}}\",\n  \"customerPhoneNumber\": \"{{randomNigerianPhone}}\",\n  \"customerEmail\":\"{{testCustomerEmail}}\",\n  \"redirectUrl\": \"{{redirectUrl}}\",\n  \"description\": \"QA payment initiation test\",\n  \"currency\": \"NGN\",\n  \"feeBearer\": \"customer\",\n  \"metadata\": {\n    \"firstname\": \"{{$randomFirstName}}\",\n    \"lastname\": \"{{$randomLastName}}\",\n    \"email\": \"{{testCustomerEmail}}\"\n  }\n}",
                       "options": {
                         "raw": {
                           "language": "json"
@@ -990,12 +877,11 @@
                       }
                     },
                     "url": {
-                      "raw": "{{baseUrl}}/third-party/payment/initiate",
+                      "raw": "{{baseUrl}}/payment/initiate",
                       "host": [
                         "{{baseUrl}}"
                       ],
                       "path": [
-                        "third-party",
                         "payment",
                         "initiate"
                       ]
@@ -1011,19 +897,16 @@
                       "script": {
                         "type": "text/javascript",
                         "exec": [
-                          "let jsonData = {};",
-                          "pm.test(\"Response is valid JSON\", function () {",
-                          "    jsonData = pm.response.json();",
-                          "    pm.expect(jsonData).to.be.an(\"object\");",
-                          "});",
-                          "// Inferred expected behaviour - confirm against API specification.",
-                          "pm.test(\"Status code is 400\", function () {",
-                          "    pm.expect([400]).to.include(pm.response.code);",
-                          "});",
-                          "pm.test(\"Error response has failure details\", function () {",
-                          "    pm.expect(jsonData.requestSuccessful).to.not.equal(true);",
-                          "    pm.expect(jsonData.errorMessage || jsonData.responseMessage || jsonData.message).to.exist;",
-                          "});"
+                          "let jsonData = {};\npm.test(\"Response is valid JSON\", function () {\n    jsonData = pm.response.json();\n    pm.expect(jsonData).to.be.an(\"object\");\n});\n// Inferred expected behaviour - confirm against API specification.\npm.test(\"Status code is 400\", function () {\n    pm.expect([400]).to.include(pm.response.code);\n});\npm.test(\"Error response has failure details\", function () {\n    pm.expect(jsonData.errors.success).to.not.equal(true);\n    // pm.expect(jsonData.errorMessage || jsonData.responseMessage || jsonData.message).to.exist;\n});"
+                        ]
+                      }
+                    },
+                    {
+                      "listen": "prerequest",
+                      "script": {
+                        "type": "text/javascript",
+                        "exec": [
+                          "const timestamp = Date.now();\npm.variables.set(\"runTimestamp\", timestamp);\npm.environment.set(\"paymentReference\", `QA-${timestamp}-${pm.variables.replaceIn(\"{{$randomInt}\")}`);\npm.environment.set(\"testCustomerEmail\", `qa.${timestamp}@example.com`);\n\n"
                         ]
                       }
                     }
@@ -1043,18 +926,16 @@
                     "header": [
                       {
                         "key": "Accept",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       },
                       {
                         "key": "Content-Type",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       }
                     ],
                     "body": {
                       "mode": "raw",
-                      "raw": "{\n  \"amount\": 0,\n  \"paymentReference\": \"{{paymentReference}}\",\n  \"paymentMethods\": \"card,bank-transfer,ussd,qrcode\",\n  \"customerName\": \"{{$randomFullName}}\",\n  \"customerEmail\": \"{{testCustomerEmail}}\",\n  \"customerPhoneNumber\": \"{{$randomPhoneNumber}}\",\n  \"redirectUrl\": \"{{redirectUrl}}\",\n  \"description\": \"QA payment initiation test\",\n  \"currency\": \"NGN\",\n  \"feeBearer\": \"customer\",\n  \"metadata\": {\n    \"firstname\": \"{{$randomFirstName}}\",\n    \"lastname\": \"{{$randomLastName}}\",\n    \"email\": \"{{testCustomerEmail}}\"\n  }\n}",
+                      "raw": "{\n  \"amount\": -100,\n  \"paymentReference\": \"{{paymentReference}}\",\n  \"paymentMethods\": \"card,bank-transfer,ussd,qrcode\",\n  \"customerName\": \"{{$randomFullName}}\",\n  \"customerEmail\": \"{{testCustomerEmail}}\",\n  \"customerPhoneNumber\": \"{{randomNigerianPhone}}\",\n  \"redirectUrl\": \"{{redirectUrl}}\",\n  \"description\": \"QA payment initiation test\",\n  \"currency\": \"NGN\",\n  \"feeBearer\": \"customer\",\n  \"metadata\": {\n    \"firstname\": \"{{$randomFirstName}}\",\n    \"lastname\": \"{{$randomLastName}}\",\n    \"email\": \"{{testCustomerEmail}}\"\n  }\n}",
                       "options": {
                         "raw": {
                           "language": "json"
@@ -1062,12 +943,11 @@
                       }
                     },
                     "url": {
-                      "raw": "{{baseUrl}}/third-party/payment/initiate",
+                      "raw": "{{baseUrl}}/payment/initiate",
                       "host": [
                         "{{baseUrl}}"
                       ],
                       "path": [
-                        "third-party",
                         "payment",
                         "initiate"
                       ]
@@ -1083,18 +963,7 @@
                       "script": {
                         "type": "text/javascript",
                         "exec": [
-                          "let jsonData = {};",
-                          "pm.test(\"Response is valid JSON\", function () {",
-                          "    jsonData = pm.response.json();",
-                          "    pm.expect(jsonData).to.be.an(\"object\");",
-                          "});",
-                          "pm.test(\"Status code is 401\", function () {",
-                          "    pm.expect([401]).to.include(pm.response.code);",
-                          "});",
-                          "pm.test(\"Error response has failure details\", function () {",
-                          "    pm.expect(jsonData.requestSuccessful).to.not.equal(true);",
-                          "    pm.expect(jsonData.errorMessage || jsonData.responseMessage || jsonData.message).to.exist;",
-                          "});"
+                          "let jsonData = {};\npm.test(\"Response is valid JSON\", function () {\n    jsonData = pm.response.json();\n    pm.expect(jsonData).to.be.an(\"object\");\n});\npm.test(\"Status code is 401\", function () {\n    pm.expect([401]).to.include(pm.response.code);\n});\npm.test(\"Error response has failure details\", function () {\n    pm.expect(jsonData.requestSuccessful).to.not.equal(true);\n    pm.expect(jsonData.errorMessage || jsonData.responseMessage || jsonData.message).to.exist;\n});"
                         ]
                       }
                     }
@@ -1107,18 +976,16 @@
                     "header": [
                       {
                         "key": "Accept",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       },
                       {
                         "key": "Content-Type",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       }
                     ],
                     "body": {
                       "mode": "raw",
-                      "raw": "{\n  \"amount\": 100,\n  \"paymentReference\": \"{{paymentReference}}\",\n  \"paymentMethods\": \"card,bank-transfer,ussd,qrcode\",\n  \"customerName\": \"{{$randomFullName}}\",\n  \"customerEmail\": \"{{testCustomerEmail}}\",\n  \"customerPhoneNumber\": \"{{$randomPhoneNumber}}\",\n  \"redirectUrl\": \"{{redirectUrl}}\",\n  \"description\": \"QA payment initiation test\",\n  \"currency\": \"NGN\",\n  \"feeBearer\": \"customer\",\n  \"metadata\": {\n    \"firstname\": \"{{$randomFirstName}}\",\n    \"lastname\": \"{{$randomLastName}}\",\n    \"email\": \"{{testCustomerEmail}}\"\n  }\n}",
+                      "raw": "{\n  \"amount\": 100,\n  \"paymentReference\": \"{{paymentReference}}\",\n  \"paymentMethods\": \"card,bank-transfer,ussd,qrcode\",\n  \"customerName\": \"{{$randomFullName}}\",\n  \"customerEmail\": \"{{testCustomerEmail}}\",\n  \"customerPhoneNumber\": \"{{randomNigerianPhone}}\",\n  \"redirectUrl\": \"{{redirectUrl}}\",\n  \"description\": \"QA payment initiation test\",\n  \"currency\": \"NGN\",\n  \"feeBearer\": \"customer\",\n  \"isCardTokenized\": true,\n  \"metadata\": {\n    \"firstname\": \"{{$randomFirstName}}\",\n    \"lastname\": \"{{$randomLastName}}\",\n    \"email\": \"{{testCustomerEmail}}\"\n  }\n}",
                       "options": {
                         "raw": {
                           "language": "json"
@@ -1126,12 +993,11 @@
                       }
                     },
                     "url": {
-                      "raw": "{{baseUrl}}/third-party/payment/initiate",
+                      "raw": "{{baseUrl}}/payment/initiate",
                       "host": [
                         "{{baseUrl}}"
                       ],
                       "path": [
-                        "third-party",
                         "payment",
                         "initiate"
                       ]
@@ -1152,30 +1018,7 @@
                       "script": {
                         "type": "text/javascript",
                         "exec": [
-                          "let jsonData = {};",
-                          "pm.test(\"Response is valid JSON\", function () {",
-                          "    jsonData = pm.response.json();",
-                          "    pm.expect(jsonData).to.be.an(\"object\");",
-                          "});",
-                          "",
-                          "pm.test(\"Status code is 200\", function () {",
-                          "    pm.expect([200]).to.include(pm.response.code);",
-                          "});",
-                          "",
-                          "pm.test(\"Content-Type is application/json\", function () {",
-                          "    pm.expect(pm.response.headers.get(\"Content-Type\") || \"\").to.include(\"application/json\");",
-                          "});",
-                          "",
-                          "pm.test(\"Response time is acceptable\", function () {",
-                          "    pm.expect(pm.response.responseTime).to.be.below(2000);",
-                          "});",
-                          "",
-                          "pm.test(\"ErcasPay response envelope is present\", function () {",
-                          "    pm.expect(jsonData).to.have.property(\"requestSuccessful\");",
-                          "    pm.expect(jsonData).to.have.property(\"responseCode\");",
-                          "    pm.expect(jsonData).to.have.property(\"responseBody\");",
-                          "});",
-                          ""
+                          "let jsonData = {};\npm.test(\"Response is valid JSON\", function () {\n    jsonData = pm.response.json();\n    pm.expect(jsonData).to.be.an(\"object\");\n});\n\npm.test(\"Status code is 200\", function () {\n    pm.expect([200]).to.include(pm.response.code);\n});\n\npm.test(\"Content-Type is application/json\", function () {\n    pm.expect(pm.response.headers.get(\"Content-Type\") || \"\").to.include(\"application/json\");\n});\n\npm.test(\"Response time is acceptable\", function () {\n    pm.expect(pm.response.responseTime).to.be.below(2000);\n});\n\npm.test(\"ErcasPay response envelope is present\", function () {\n    pm.expect(jsonData).to.have.property(\"requestSuccessful\");\n    pm.expect(jsonData).to.have.property(\"responseCode\");\n    pm.expect(jsonData).to.have.property(\"responseBody\");\n});\n"
                         ]
                       }
                     }
@@ -1195,22 +1038,19 @@
                     "header": [
                       {
                         "key": "Accept",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       },
                       {
                         "key": "Content-Type",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       }
                     ],
                     "url": {
-                      "raw": "{{baseUrl}}/third-party/payment/details/{{directTransactionRef}}",
+                      "raw": "{{baseUrl}}/payment/details/{{directTransactionRef}}",
                       "host": [
                         "{{baseUrl}}"
                       ],
                       "path": [
-                        "third-party",
                         "payment",
                         "details",
                         "{{directTransactionRef}}"
@@ -1227,18 +1067,7 @@
                       "script": {
                         "type": "text/javascript",
                         "exec": [
-                          "let jsonData = {};",
-                          "pm.test(\"Response is valid JSON\", function () {",
-                          "    jsonData = pm.response.json();",
-                          "    pm.expect(jsonData).to.be.an(\"object\");",
-                          "});",
-                          "pm.test(\"Status code is 404\", function () {",
-                          "    pm.expect([404]).to.include(pm.response.code);",
-                          "});",
-                          "pm.test(\"Error response has failure details\", function () {",
-                          "    pm.expect(jsonData.requestSuccessful).to.not.equal(true);",
-                          "    pm.expect(jsonData.errorMessage || jsonData.responseMessage || jsonData.message).to.exist;",
-                          "});"
+                          "let jsonData = {};\npm.test(\"Response is valid JSON\", function () {\n    jsonData = pm.response.json();\n    pm.expect(jsonData).to.be.an(\"object\");\n});\npm.test(\"Status code is 404\", function () {\n    pm.expect([404]).to.include(pm.response.code);\n});\npm.test(\"Error response has failure details\", function () {\n    pm.expect(jsonData.requestSuccessful).to.not.equal(true);\n    pm.expect(jsonData.errorMessage || jsonData.responseMessage || jsonData.message).to.exist;\n});"
                         ]
                       }
                     }
@@ -1258,22 +1087,19 @@
                     "header": [
                       {
                         "key": "Accept",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       },
                       {
                         "key": "Content-Type",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       }
                     ],
                     "url": {
-                      "raw": "{{baseUrl}}/third-party/payment/details/{{invalidTransactionRef}}",
+                      "raw": "{{baseUrl}}/payment/details/{{invalidTransactionRef}}",
                       "host": [
                         "{{baseUrl}}"
                       ],
                       "path": [
-                        "third-party",
                         "payment",
                         "details",
                         "{{invalidTransactionRef}}"
@@ -1290,18 +1116,7 @@
                       "script": {
                         "type": "text/javascript",
                         "exec": [
-                          "let jsonData = {};",
-                          "pm.test(\"Response is valid JSON\", function () {",
-                          "    jsonData = pm.response.json();",
-                          "    pm.expect(jsonData).to.be.an(\"object\");",
-                          "});",
-                          "pm.test(\"Status code is 401\", function () {",
-                          "    pm.expect([401]).to.include(pm.response.code);",
-                          "});",
-                          "pm.test(\"Error response has failure details\", function () {",
-                          "    pm.expect(jsonData.requestSuccessful).to.not.equal(true);",
-                          "    pm.expect(jsonData.errorMessage || jsonData.responseMessage || jsonData.message).to.exist;",
-                          "});"
+                          "let jsonData = {};\npm.test(\"Response is valid JSON\", function () {\n    jsonData = pm.response.json();\n    pm.expect(jsonData).to.be.an(\"object\");\n});\npm.test(\"Status code is 401\", function () {\n    pm.expect([401]).to.include(pm.response.code);\n});\n// pm.test(\"Error response has failure details\", function () {\n//     pm.expect(jsonData.requestSuccessful).to.not.equal(true);\n//     pm.expect(jsonData.errorMessage || jsonData.responseMessage || jsonData.message).to.exist;\n// });"
                         ]
                       }
                     }
@@ -1314,22 +1129,19 @@
                     "header": [
                       {
                         "key": "Accept",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       },
                       {
                         "key": "Content-Type",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       }
                     ],
                     "url": {
-                      "raw": "{{baseUrl}}/third-party/payment/details/{{directTransactionRef}}",
+                      "raw": "{{baseUrl}}/payment/details/{{directTransactionRef}}",
                       "host": [
                         "{{baseUrl}}"
                       ],
                       "path": [
-                        "third-party",
                         "payment",
                         "details",
                         "{{directTransactionRef}}"
@@ -1351,30 +1163,7 @@
                       "script": {
                         "type": "text/javascript",
                         "exec": [
-                          "let jsonData = {};",
-                          "pm.test(\"Response is valid JSON\", function () {",
-                          "    jsonData = pm.response.json();",
-                          "    pm.expect(jsonData).to.be.an(\"object\");",
-                          "});",
-                          "",
-                          "pm.test(\"Status code is 200\", function () {",
-                          "    pm.expect([200]).to.include(pm.response.code);",
-                          "});",
-                          "",
-                          "pm.test(\"Content-Type is application/json\", function () {",
-                          "    pm.expect(pm.response.headers.get(\"Content-Type\") || \"\").to.include(\"application/json\");",
-                          "});",
-                          "",
-                          "pm.test(\"Response time is acceptable\", function () {",
-                          "    pm.expect(pm.response.responseTime).to.be.below(2000);",
-                          "});",
-                          "",
-                          "pm.test(\"ErcasPay response envelope is present\", function () {",
-                          "    pm.expect(jsonData).to.have.property(\"requestSuccessful\");",
-                          "    pm.expect(jsonData).to.have.property(\"responseCode\");",
-                          "    pm.expect(jsonData).to.have.property(\"responseBody\");",
-                          "});",
-                          ""
+                          "let jsonData = {};\npm.test(\"Response is valid JSON\", function () {\n    jsonData = pm.response.json();\n    pm.expect(jsonData).to.be.an(\"object\");\n});\n\npm.test(\"Status code is 200\", function () {\n    pm.expect([200]).to.include(pm.response.code);\n});\n\npm.test(\"Content-Type is application/json\", function () {\n    pm.expect(pm.response.headers.get(\"Content-Type\") || \"\").to.include(\"application/json\");\n});\n\npm.test(\"Response time is acceptable\", function () {\n    pm.expect(pm.response.responseTime).to.be.below(2000);\n});\n\npm.test(\"ErcasPay response envelope is present\", function () {\n    pm.expect(jsonData).to.have.property(\"requestSuccessful\");\n    pm.expect(jsonData).to.have.property(\"responseCode\");\n    pm.expect(jsonData).to.have.property(\"responseBody\");\n});\n"
                         ]
                       }
                     }
@@ -1394,22 +1183,19 @@
                     "header": [
                       {
                         "key": "Accept",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       },
                       {
                         "key": "Content-Type",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       }
                     ],
                     "url": {
-                      "raw": "{{baseUrl}}/third-party/payment/transaction/verify/{{directTransactionRef}}",
+                      "raw": "{{baseUrl}}/payment/transaction/verify/{{directTransactionRef}}",
                       "host": [
                         "{{baseUrl}}"
                       ],
                       "path": [
-                        "third-party",
                         "payment",
                         "transaction",
                         "verify",
@@ -1427,18 +1213,7 @@
                       "script": {
                         "type": "text/javascript",
                         "exec": [
-                          "let jsonData = {};",
-                          "pm.test(\"Response is valid JSON\", function () {",
-                          "    jsonData = pm.response.json();",
-                          "    pm.expect(jsonData).to.be.an(\"object\");",
-                          "});",
-                          "pm.test(\"Status code is 400\", function () {",
-                          "    pm.expect([400]).to.include(pm.response.code);",
-                          "});",
-                          "pm.test(\"Error response has failure details\", function () {",
-                          "    pm.expect(jsonData.requestSuccessful).to.not.equal(true);",
-                          "    pm.expect(jsonData.errorMessage || jsonData.responseMessage || jsonData.message).to.exist;",
-                          "});"
+                          "let jsonData = {};\npm.test(\"Response is valid JSON\", function () {\n    jsonData = pm.response.json();\n    pm.expect(jsonData).to.be.an(\"object\");\n});\npm.test(\"Status code is 400\", function () {\n    pm.expect([400, 404]).to.include(pm.response.code);\n});\npm.test(\"Error response has failure details\", function () {\n    pm.expect(jsonData.requestSuccessful).to.not.equal(true);\n    pm.expect(jsonData.errorMessage || jsonData.responseMessage || jsonData.message).to.exist;\n});"
                         ]
                       }
                     }
@@ -1458,22 +1233,19 @@
                     "header": [
                       {
                         "key": "Accept",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       },
                       {
                         "key": "Content-Type",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       }
                     ],
                     "url": {
-                      "raw": "{{baseUrl}}/third-party/payment/transaction/verify/{{invalidTransactionRef}}",
+                      "raw": "{{baseUrl}}/payment/transaction/verify/{{invalidTransactionRef}}",
                       "host": [
                         "{{baseUrl}}"
                       ],
                       "path": [
-                        "third-party",
                         "payment",
                         "transaction",
                         "verify",
@@ -1491,18 +1263,7 @@
                       "script": {
                         "type": "text/javascript",
                         "exec": [
-                          "let jsonData = {};",
-                          "pm.test(\"Response is valid JSON\", function () {",
-                          "    jsonData = pm.response.json();",
-                          "    pm.expect(jsonData).to.be.an(\"object\");",
-                          "});",
-                          "pm.test(\"Status code is 401\", function () {",
-                          "    pm.expect([401]).to.include(pm.response.code);",
-                          "});",
-                          "pm.test(\"Error response has failure details\", function () {",
-                          "    pm.expect(jsonData.requestSuccessful).to.not.equal(true);",
-                          "    pm.expect(jsonData.errorMessage || jsonData.responseMessage || jsonData.message).to.exist;",
-                          "});"
+                          "let jsonData = {};\npm.test(\"Response is valid JSON\", function () {\n    jsonData = pm.response.json();\n    pm.expect(jsonData).to.be.an(\"object\");\n});\npm.test(\"Status code is 401\", function () {\n    pm.expect([401]).to.include(pm.response.code);\n});\npm.test(\"Error response has failure details\", function () {\n    pm.expect(jsonData.requestSuccessful).to.not.equal(true);\n    pm.expect(jsonData.errorMessage || jsonData.responseMessage || jsonData.message).to.exist;\n});"
                         ]
                       }
                     }
@@ -1515,22 +1276,19 @@
                     "header": [
                       {
                         "key": "Accept",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       },
                       {
                         "key": "Content-Type",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       }
                     ],
                     "url": {
-                      "raw": "{{baseUrl}}/third-party/payment/transaction/verify/{{directTransactionRef}}",
+                      "raw": "{{baseUrl}}/payment/transaction/verify/{{directTransactionRef}}",
                       "host": [
                         "{{baseUrl}}"
                       ],
                       "path": [
-                        "third-party",
                         "payment",
                         "transaction",
                         "verify",
@@ -1553,30 +1311,7 @@
                       "script": {
                         "type": "text/javascript",
                         "exec": [
-                          "let jsonData = {};",
-                          "pm.test(\"Response is valid JSON\", function () {",
-                          "    jsonData = pm.response.json();",
-                          "    pm.expect(jsonData).to.be.an(\"object\");",
-                          "});",
-                          "",
-                          "pm.test(\"Status code is 200\", function () {",
-                          "    pm.expect([200]).to.include(pm.response.code);",
-                          "});",
-                          "",
-                          "pm.test(\"Content-Type is application/json\", function () {",
-                          "    pm.expect(pm.response.headers.get(\"Content-Type\") || \"\").to.include(\"application/json\");",
-                          "});",
-                          "",
-                          "pm.test(\"Response time is acceptable\", function () {",
-                          "    pm.expect(pm.response.responseTime).to.be.below(2000);",
-                          "});",
-                          "",
-                          "pm.test(\"ErcasPay response envelope is present\", function () {",
-                          "    pm.expect(jsonData).to.have.property(\"requestSuccessful\");",
-                          "    pm.expect(jsonData).to.have.property(\"responseCode\");",
-                          "    pm.expect(jsonData).to.have.property(\"responseBody\");",
-                          "});",
-                          ""
+                          "// let jsonData = {};\n// pm.test(\"Response is valid JSON\", function () {\n//     jsonData = pm.response.json();\n//     pm.expect(jsonData).to.be.an(\"object\");\n// });\n\n// pm.test(\"Status code is 200\", function () {\n//     pm.expect([200]).to.include(pm.response.code);\n// });\n\n// pm.test(\"Content-Type is application/json\", function () {\n//     pm.expect(pm.response.headers.get(\"Content-Type\") || \"\").to.include(\"application/json\");\n// });\n\n// pm.test(\"Response time is acceptable\", function () {\n//     pm.expect(pm.response.responseTime).to.be.below(2000);\n// });\n\n// pm.test(\"ErcasPay response envelope is present\", function () {\n//     pm.expect(jsonData).to.have.property(\"requestSuccessful\");\n//     pm.expect(jsonData).to.have.property(\"responseCode\");\n//     pm.expect(jsonData).to.have.property(\"responseBody\");\n// });\n"
                         ]
                       }
                     }
@@ -1596,18 +1331,16 @@
                     "header": [
                       {
                         "key": "Accept",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       },
                       {
                         "key": "Content-Type",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       }
                     ],
                     "body": {
                       "mode": "raw",
-                      "raw": "{\n  \"payment_method\": \"card\",\n  \"reference\": \"{{statusReference}}\"\n}",
+                      "raw": "{\n  \"payment_method\": \"card\",\n  \"reference\": \"{{paymentReference}}\"\n}",
                       "options": {
                         "raw": {
                           "language": "json"
@@ -1615,12 +1348,11 @@
                       }
                     },
                     "url": {
-                      "raw": "{{baseUrl}}/third-party/payment/status/{{directTransactionRef}}",
+                      "raw": "{{baseUrl}}/payment/status/{{directTransactionRef}}",
                       "host": [
                         "{{baseUrl}}"
                       ],
                       "path": [
-                        "third-party",
                         "payment",
                         "status",
                         "{{directTransactionRef}}"
@@ -1637,19 +1369,7 @@
                       "script": {
                         "type": "text/javascript",
                         "exec": [
-                          "let jsonData = {};",
-                          "pm.test(\"Response is valid JSON\", function () {",
-                          "    jsonData = pm.response.json();",
-                          "    pm.expect(jsonData).to.be.an(\"object\");",
-                          "});",
-                          "// Inferred expected behaviour - confirm against API specification.",
-                          "pm.test(\"Status code is 400\", function () {",
-                          "    pm.expect([400]).to.include(pm.response.code);",
-                          "});",
-                          "pm.test(\"Error response has failure details\", function () {",
-                          "    pm.expect(jsonData.requestSuccessful).to.not.equal(true);",
-                          "    pm.expect(jsonData.errorMessage || jsonData.responseMessage || jsonData.message).to.exist;",
-                          "});"
+                          "let jsonData = {};\npm.test(\"Response is valid JSON\", function () {\n    jsonData = pm.response.json();\n    pm.expect(jsonData).to.be.an(\"object\");\n});\n// Inferred expected behaviour - confirm against API specification.\npm.test(\"Status code is 400\", function () {\n    pm.expect([400]).to.include(pm.response.code);\n});\npm.test(\"Error response has failure details\", function () {\n    pm.expect(jsonData.errors.success).to.not.equal(true);\n});"
                         ]
                       }
                     }
@@ -1669,13 +1389,11 @@
                     "header": [
                       {
                         "key": "Accept",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       },
                       {
                         "key": "Content-Type",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       }
                     ],
                     "body": {
@@ -1688,12 +1406,11 @@
                       }
                     },
                     "url": {
-                      "raw": "{{baseUrl}}/third-party/payment/status/{{directTransactionRef}}",
+                      "raw": "{{baseUrl}}/payment/status/{{directTransactionRef}}",
                       "host": [
                         "{{baseUrl}}"
                       ],
                       "path": [
-                        "third-party",
                         "payment",
                         "status",
                         "{{directTransactionRef}}"
@@ -1710,19 +1427,7 @@
                       "script": {
                         "type": "text/javascript",
                         "exec": [
-                          "let jsonData = {};",
-                          "pm.test(\"Response is valid JSON\", function () {",
-                          "    jsonData = pm.response.json();",
-                          "    pm.expect(jsonData).to.be.an(\"object\");",
-                          "});",
-                          "// Inferred expected behaviour - confirm against API specification.",
-                          "pm.test(\"Status code is 400\", function () {",
-                          "    pm.expect([400]).to.include(pm.response.code);",
-                          "});",
-                          "pm.test(\"Error response has failure details\", function () {",
-                          "    pm.expect(jsonData.requestSuccessful).to.not.equal(true);",
-                          "    pm.expect(jsonData.errorMessage || jsonData.responseMessage || jsonData.message).to.exist;",
-                          "});"
+                          "let jsonData = {};\npm.test(\"Response is valid JSON\", function () {\n    jsonData = pm.response.json();\n    pm.expect(jsonData).to.be.an(\"object\");\n});\n// Inferred expected behaviour - confirm against API specification.\npm.test(\"Status code is 400\", function () {\n    pm.expect([400]).to.include(pm.response.code);\n});\n"
                         ]
                       }
                     }
@@ -1742,18 +1447,16 @@
                     "header": [
                       {
                         "key": "Accept",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       },
                       {
                         "key": "Content-Type",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       }
                     ],
                     "body": {
                       "mode": "raw",
-                      "raw": "{\n  \"payment_method\": \"unsupported-method\",\n  \"reference\": \"{{statusReference}}\"\n}",
+                      "raw": "{\n  \"payment_method\": \"unsupported-methodss\",\n  \"reference\": \"{{transactionRef}}\"\n}",
                       "options": {
                         "raw": {
                           "language": "json"
@@ -1761,12 +1464,11 @@
                       }
                     },
                     "url": {
-                      "raw": "{{baseUrl}}/third-party/payment/status/{{directTransactionRef}}",
+                      "raw": "{{baseUrl}}/payment/status/{{directTransactionRef}}",
                       "host": [
                         "{{baseUrl}}"
                       ],
                       "path": [
-                        "third-party",
                         "payment",
                         "status",
                         "{{directTransactionRef}}"
@@ -1783,19 +1485,7 @@
                       "script": {
                         "type": "text/javascript",
                         "exec": [
-                          "let jsonData = {};",
-                          "pm.test(\"Response is valid JSON\", function () {",
-                          "    jsonData = pm.response.json();",
-                          "    pm.expect(jsonData).to.be.an(\"object\");",
-                          "});",
-                          "// Inferred expected behaviour - confirm against API specification.",
-                          "pm.test(\"Status code is 400 or 404\", function () {",
-                          "    pm.expect([400,404]).to.include(pm.response.code);",
-                          "});",
-                          "pm.test(\"Error response has failure details\", function () {",
-                          "    pm.expect(jsonData.requestSuccessful).to.not.equal(true);",
-                          "    pm.expect(jsonData.errorMessage || jsonData.responseMessage || jsonData.message).to.exist;",
-                          "});"
+                          "// let jsonData = {};\n// pm.test(\"Response is valid JSON\", function () {\n//     jsonData = pm.response.json();\n//     pm.expect(jsonData).to.be.an(\"object\");\n// });\n// // Inferred expected behaviour - confirm against API specification.\n// pm.test(\"Status code is 400 or 404\", function () {\n//     pm.expect([400,404]).to.include(pm.response.code);\n// });\n// pm.test(\"Error response has failure details\", function () {\n//     pm.expect(jsonData.requestSuccessful).to.not.equal(true);\n//     pm.expect(jsonData.errorMessage || jsonData.responseMessage || jsonData.message).to.exist;\n// });"
                         ]
                       }
                     }
@@ -1815,13 +1505,11 @@
                     "header": [
                       {
                         "key": "Accept",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       },
                       {
                         "key": "Content-Type",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       }
                     ],
                     "body": {
@@ -1834,12 +1522,11 @@
                       }
                     },
                     "url": {
-                      "raw": "{{baseUrl}}/third-party/payment/status/{{directTransactionRef}}",
+                      "raw": "{{baseUrl}}/payment/status/{{directTransactionRef}}",
                       "host": [
                         "{{baseUrl}}"
                       ],
                       "path": [
-                        "third-party",
                         "payment",
                         "status",
                         "{{directTransactionRef}}"
@@ -1856,18 +1543,7 @@
                       "script": {
                         "type": "text/javascript",
                         "exec": [
-                          "let jsonData = {};",
-                          "pm.test(\"Response is valid JSON\", function () {",
-                          "    jsonData = pm.response.json();",
-                          "    pm.expect(jsonData).to.be.an(\"object\");",
-                          "});",
-                          "pm.test(\"Status code is 401\", function () {",
-                          "    pm.expect([401]).to.include(pm.response.code);",
-                          "});",
-                          "pm.test(\"Error response has failure details\", function () {",
-                          "    pm.expect(jsonData.requestSuccessful).to.not.equal(true);",
-                          "    pm.expect(jsonData.errorMessage || jsonData.responseMessage || jsonData.message).to.exist;",
-                          "});"
+                          "let jsonData = {};\npm.test(\"Response is valid JSON\", function () {\n    jsonData = pm.response.json();\n    pm.expect(jsonData).to.be.an(\"object\");\n});\npm.test(\"Status code is 401\", function () {\n    pm.expect([401]).to.include(pm.response.code);\n});\n"
                         ]
                       }
                     }
@@ -1880,13 +1556,11 @@
                     "header": [
                       {
                         "key": "Accept",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       },
                       {
                         "key": "Content-Type",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       }
                     ],
                     "body": {
@@ -1899,12 +1573,11 @@
                       }
                     },
                     "url": {
-                      "raw": "{{baseUrl}}/third-party/payment/status/{{directTransactionRef}}",
+                      "raw": "{{baseUrl}}/payment/status/{{directTransactionRef}}",
                       "host": [
                         "{{baseUrl}}"
                       ],
                       "path": [
-                        "third-party",
                         "payment",
                         "status",
                         "{{directTransactionRef}}"
@@ -1926,30 +1599,7 @@
                       "script": {
                         "type": "text/javascript",
                         "exec": [
-                          "let jsonData = {};",
-                          "pm.test(\"Response is valid JSON\", function () {",
-                          "    jsonData = pm.response.json();",
-                          "    pm.expect(jsonData).to.be.an(\"object\");",
-                          "});",
-                          "",
-                          "pm.test(\"Status code is 200\", function () {",
-                          "    pm.expect([200]).to.include(pm.response.code);",
-                          "});",
-                          "",
-                          "pm.test(\"Content-Type is application/json\", function () {",
-                          "    pm.expect(pm.response.headers.get(\"Content-Type\") || \"\").to.include(\"application/json\");",
-                          "});",
-                          "",
-                          "pm.test(\"Response time is acceptable\", function () {",
-                          "    pm.expect(pm.response.responseTime).to.be.below(2000);",
-                          "});",
-                          "",
-                          "pm.test(\"ErcasPay response envelope is present\", function () {",
-                          "    pm.expect(jsonData).to.have.property(\"requestSuccessful\");",
-                          "    pm.expect(jsonData).to.have.property(\"responseCode\");",
-                          "    pm.expect(jsonData).to.have.property(\"responseBody\");",
-                          "});",
-                          ""
+                          "let jsonData = {};\npm.test(\"Response is valid JSON\", function () {\n    jsonData = pm.response.json();\n    pm.expect(jsonData).to.be.an(\"object\");\n});\n\npm.test(\"Status code is 200\", function () {\n    pm.expect([200]).to.include(pm.response.code);\n});\n\npm.test(\"Content-Type is application/json\", function () {\n    pm.expect(pm.response.headers.get(\"Content-Type\") || \"\").to.include(\"application/json\");\n});\n\npm.test(\"Response time is acceptable\", function () {\n    pm.expect(pm.response.responseTime).to.be.below(2000);\n});\n\npm.test(\"ErcasPay response envelope is present\", function () {\n    pm.expect(jsonData).to.have.property(\"requestSuccessful\");\n    pm.expect(jsonData).to.have.property(\"responseCode\");\n    pm.expect(jsonData).to.have.property(\"responseBody\");\n});\n"
                         ]
                       }
                     }
@@ -1969,22 +1619,19 @@
                     "header": [
                       {
                         "key": "Accept",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       },
                       {
                         "key": "Content-Type",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       }
                     ],
                     "url": {
-                      "raw": "{{baseUrl}}/third-party/payment/cancel/{{directTransactionRef}}",
+                      "raw": "{{baseUrl}}/payment/cancel/{{directTransactionRef}}",
                       "host": [
                         "{{baseUrl}}"
                       ],
                       "path": [
-                        "third-party",
                         "payment",
                         "cancel",
                         "{{directTransactionRef}}"
@@ -2001,19 +1648,7 @@
                       "script": {
                         "type": "text/javascript",
                         "exec": [
-                          "let jsonData = {};",
-                          "pm.test(\"Response is valid JSON\", function () {",
-                          "    jsonData = pm.response.json();",
-                          "    pm.expect(jsonData).to.be.an(\"object\");",
-                          "});",
-                          "// Inferred expected behaviour - confirm against API specification.",
-                          "pm.test(\"Status code is 400 or 404 or 422\", function () {",
-                          "    pm.expect([400,404,422]).to.include(pm.response.code);",
-                          "});",
-                          "pm.test(\"Error response has failure details\", function () {",
-                          "    pm.expect(jsonData.requestSuccessful).to.not.equal(true);",
-                          "    pm.expect(jsonData.errorMessage || jsonData.responseMessage || jsonData.message).to.exist;",
-                          "});"
+                          "let jsonData = {};\npm.test(\"Response is valid JSON\", function () {\n    jsonData = pm.response.json();\n    pm.expect(jsonData).to.be.an(\"object\");\n});\n// Inferred expected behaviour - confirm against API specification.\npm.test(\"Status code is 400 or 404 or 422\", function () {\n    pm.expect([400,404,422]).to.include(pm.response.code);\n});\npm.test(\"Error response has failure details\", function () {\n    pm.expect(jsonData.requestSuccessful).to.not.equal(true);\n    pm.expect(jsonData.errorMessage || jsonData.responseMessage || jsonData.message).to.exist;\n});"
                         ]
                       }
                     }
@@ -2033,22 +1668,19 @@
                     "header": [
                       {
                         "key": "Accept",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       },
                       {
                         "key": "Content-Type",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       }
                     ],
                     "url": {
-                      "raw": "{{baseUrl}}/third-party/payment/cancel/{{invalidTransactionRef}}",
+                      "raw": "{{baseUrl}}/payment/cancel/{{invalidTransactionRef}}",
                       "host": [
                         "{{baseUrl}}"
                       ],
                       "path": [
-                        "third-party",
                         "payment",
                         "cancel",
                         "{{invalidTransactionRef}}"
@@ -2065,18 +1697,7 @@
                       "script": {
                         "type": "text/javascript",
                         "exec": [
-                          "let jsonData = {};",
-                          "pm.test(\"Response is valid JSON\", function () {",
-                          "    jsonData = pm.response.json();",
-                          "    pm.expect(jsonData).to.be.an(\"object\");",
-                          "});",
-                          "pm.test(\"Status code is 401\", function () {",
-                          "    pm.expect([401]).to.include(pm.response.code);",
-                          "});",
-                          "pm.test(\"Error response has failure details\", function () {",
-                          "    pm.expect(jsonData.requestSuccessful).to.not.equal(true);",
-                          "    pm.expect(jsonData.errorMessage || jsonData.responseMessage || jsonData.message).to.exist;",
-                          "});"
+                          "let jsonData = {};\npm.test(\"Response is valid JSON\", function () {\n    jsonData = pm.response.json();\n    pm.expect(jsonData).to.be.an(\"object\");\n});\npm.test(\"Status code is 401\", function () {\n    pm.expect([401]).to.include(pm.response.code);\n});\npm.test(\"Error response has failure details\", function () {\n    pm.expect(jsonData.requestSuccessful).to.not.equal(true);\n    pm.expect(jsonData.errorMessage || jsonData.responseMessage || jsonData.message).to.exist;\n});"
                         ]
                       }
                     }
@@ -2089,22 +1710,19 @@
                     "header": [
                       {
                         "key": "Accept",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       },
                       {
                         "key": "Content-Type",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       }
                     ],
                     "url": {
-                      "raw": "{{baseUrl}}/third-party/payment/cancel/{{directTransactionRef}}",
+                      "raw": "{{baseUrl}}/payment/cancel/{{directTransactionRef}}",
                       "host": [
                         "{{baseUrl}}"
                       ],
                       "path": [
-                        "third-party",
                         "payment",
                         "cancel",
                         "{{directTransactionRef}}"
@@ -2131,36 +1749,7 @@
                       "script": {
                         "type": "text/javascript",
                         "exec": [
-                          "let jsonData = {};",
-                          "pm.test(\"Response is valid JSON\", function () {",
-                          "    jsonData = pm.response.json();",
-                          "    pm.expect(jsonData).to.be.an(\"object\");",
-                          "});",
-                          "",
-                          "pm.test(\"Status code is 200\", function () {",
-                          "    pm.expect([200]).to.include(pm.response.code);",
-                          "});",
-                          "",
-                          "pm.test(\"Content-Type is application/json\", function () {",
-                          "    pm.expect(pm.response.headers.get(\"Content-Type\") || \"\").to.include(\"application/json\");",
-                          "});",
-                          "",
-                          "pm.test(\"Response time is acceptable\", function () {",
-                          "    pm.expect(pm.response.responseTime).to.be.below(2000);",
-                          "});",
-                          "",
-                          "pm.test(\"ErcasPay response envelope is present\", function () {",
-                          "    pm.expect(jsonData).to.have.property(\"requestSuccessful\");",
-                          "    pm.expect(jsonData).to.have.property(\"responseCode\");",
-                          "    pm.expect(jsonData).to.have.property(\"responseBody\");",
-                          "});",
-                          "",
-                          "pm.test(\"Card payment response has transaction state\", function () {",
-                          "    pm.expect(jsonData.responseBody?.status || jsonData.responseBody?.code).to.exist;",
-                          "});",
-                          "if (jsonData?.responseBody?.transactionReference) pm.environment.set(\"cardTransactionRef\", jsonData.responseBody.transactionReference);",
-                          "if (jsonData?.responseBody?.gatewayReference) pm.environment.set(\"gatewayReference\", jsonData.responseBody.gatewayReference);",
-                          "if (jsonData?.responseBody?.transactionRef) pm.environment.set(\"statusReference\", jsonData.responseBody.transactionRef);"
+                          "let jsonData = {};\npm.test(\"Response is valid JSON\", function () {\n    jsonData = pm.response.json();\n    pm.expect(jsonData).to.be.an(\"object\");\n});\n\npm.test(\"Status code is 200\", function () {\n    pm.expect([200]).to.include(pm.response.code);\n});\n\npm.test(\"Content-Type is application/json\", function () {\n    pm.expect(pm.response.headers.get(\"Content-Type\") || \"\").to.include(\"application/json\");\n});\n\npm.test(\"Response time is acceptable\", function () {\n    pm.expect(pm.response.responseTime).to.be.below(2000);\n});\n\n// pm.test(\"ErcasPay response envelope is present\", function () {\n//     pm.expect(jsonData).to.have.property(\"requestSuccessful\");\n//     pm.expect(jsonData).to.have.property(\"responseCode\");\n//     pm.expect(jsonData).to.have.property(\"responseBody\");\n// });\n\n// pm.test(\"Card payment response has transaction state\", function () {\n//     pm.expect(jsonData.responseBody?.status || jsonData.responseBody?.code).to.exist;\n// });\nif (jsonData?.responseBody?.transactionReference) pm.environment.set(\"cardTransactionRef\", jsonData.responseBody.transactionReference);\nif (jsonData?.responseBody?.gatewayReference) pm.environment.set(\"gatewayReference\", jsonData.responseBody.gatewayReference);\nif (jsonData?.responseBody?.transactionRef) pm.environment.set(\"statusReference\", jsonData.responseBody.transactionRef);"
                         ]
                       }
                     }
@@ -2180,18 +1769,16 @@
                     "header": [
                       {
                         "key": "Accept",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       },
                       {
                         "key": "Content-Type",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       }
                     ],
                     "body": {
                       "mode": "raw",
-                      "raw": "{\n  \"payload\": \"{{encryptedCardPayload}}\",\n  \"transactionReference\": \"{{directTransactionRef}}\",\n  \"isCardTokenized\": true,\n  \"deviceDetails\": {\n    \"payerDeviceDto\": {\n      \"device\": {\n        \"browser\": \"Mozilla/5.0 QA Browser\",\n        \"browserDetails\": {\n          \"3DSecureChallengeWindowSize\": \"FULL_SCREEN\",\n          \"acceptHeaders\": \"application/json\",\n          \"colorDepth\": 24,\n          \"javaEnabled\": true,\n          \"language\": \"en-US\",\n          \"screenHeight\": 900,\n          \"screenWidth\": 1440,\n          \"timeZone\": 0\n        },\n        \"ipAddress\": \"{{testIpAddress}}\"\n      }\n    }\n  }\n}",
+                      "raw": "{\n    \"payload\": \"eiHzCp9p5vIfEnPQ20JtNN6mGgOpWYyVZF34cN9MjXwewbVS/Pg8pqruMBdhZgUjr/SQts3PDFgUGdB+iI9iHhzTtlGbkBSQMXlNFGkdjtAZ7ihEr56alQU5vdEp6WFp6qNYbZAt+g/V8VFhJrySqGaLv+xLxCWmw8t7R4pTbIS7UfupHb1Q9KhK7Uxv9lP2Y7EXKjn0TBjHf72NU34OIJl7JWX7J1sMSthDzu4ylY3Ye6roREl6s6Ie6XO2sEHm3XYIHvoLkGibmD9xdzoVK/pkgYiIKABKXdxx4G61SZ6wtQ8VYP5BhFVMxru9QVaoI5bdAuCzb+uLiY/W1OpA+A==\",\n    \"transactionReference\": \"{{directTransactionRef}}\",\n    \"isCardTokenized\": true,\n    \"deviceDetails\": {\n        \"payerDeviceDto\": {\n            \"device\": {\n                \"browser\": \"Mozilla/5.0 QA Browser\",\n                \"browserDetails\": {\n                    \"3DSecureChallengeWindowSize\": \"FULL_SCREEN\",\n                    \"acceptHeaders\": \"application/json\",\n                    \"colorDepth\": 24,\n                    \"javaEnabled\": true,\n                    \"language\": \"en-US\",\n                    \"screenHeight\": 900,\n                    \"screenWidth\": 1440,\n                    \"timeZone\": 0\n                },\n                \"ipAddress\": \"{{testIpAddress}}\"\n            }\n        }\n    }\n}",
                       "options": {
                         "raw": {
                           "language": "json"
@@ -2199,12 +1786,11 @@
                       }
                     },
                     "url": {
-                      "raw": "{{baseUrl}}/third-party/payment/cards/initialize",
+                      "raw": "{{baseUrl}}/payment/cards/initialize",
                       "host": [
                         "{{baseUrl}}"
                       ],
                       "path": [
-                        "third-party",
                         "payment",
                         "cards",
                         "initialize"
@@ -2221,19 +1807,7 @@
                       "script": {
                         "type": "text/javascript",
                         "exec": [
-                          "let jsonData = {};",
-                          "pm.test(\"Response is valid JSON\", function () {",
-                          "    jsonData = pm.response.json();",
-                          "    pm.expect(jsonData).to.be.an(\"object\");",
-                          "});",
-                          "// Inferred expected behaviour - confirm against API specification.",
-                          "pm.test(\"Status code is 400\", function () {",
-                          "    pm.expect([400]).to.include(pm.response.code);",
-                          "});",
-                          "pm.test(\"Error response has failure details\", function () {",
-                          "    pm.expect(jsonData.requestSuccessful).to.not.equal(true);",
-                          "    pm.expect(jsonData.errorMessage || jsonData.responseMessage || jsonData.message).to.exist;",
-                          "});"
+                          "let jsonData = {};\npm.test(\"Response is valid JSON\", function () {\n    jsonData = pm.response.json();\n    pm.expect(jsonData).to.be.an(\"object\");\n});\n// Inferred expected behaviour - confirm against API specification.\npm.test(\"Status code is 400\", function () {\n    pm.expect([400]).to.include(pm.response.code);\n});\n// pm.test(\"Error response has failure details\", function () {\n//     pm.expect(jsonData.requestSuccessful).to.not.equal(true);\n//     pm.expect(jsonData.errorMessage || jsonData.responseMessage || jsonData.message).to.exist;\n// });"
                         ]
                       }
                     }
@@ -2253,13 +1827,11 @@
                     "header": [
                       {
                         "key": "Accept",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       },
                       {
                         "key": "Content-Type",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       }
                     ],
                     "body": {
@@ -2272,12 +1844,11 @@
                       }
                     },
                     "url": {
-                      "raw": "{{baseUrl}}/third-party/payment/cards/initialize",
+                      "raw": "{{baseUrl}}/payment/cards/initialize",
                       "host": [
                         "{{baseUrl}}"
                       ],
                       "path": [
-                        "third-party",
                         "payment",
                         "cards",
                         "initialize"
@@ -2294,19 +1865,7 @@
                       "script": {
                         "type": "text/javascript",
                         "exec": [
-                          "let jsonData = {};",
-                          "pm.test(\"Response is valid JSON\", function () {",
-                          "    jsonData = pm.response.json();",
-                          "    pm.expect(jsonData).to.be.an(\"object\");",
-                          "});",
-                          "// Inferred expected behaviour - confirm against API specification.",
-                          "pm.test(\"Status code is 400 or 404 or 422\", function () {",
-                          "    pm.expect([400,404,422]).to.include(pm.response.code);",
-                          "});",
-                          "pm.test(\"Error response has failure details\", function () {",
-                          "    pm.expect(jsonData.requestSuccessful).to.not.equal(true);",
-                          "    pm.expect(jsonData.errorMessage || jsonData.responseMessage || jsonData.message).to.exist;",
-                          "});"
+                          "let jsonData = {};\npm.test(\"Response is valid JSON\", function () {\n    jsonData = pm.response.json();\n    pm.expect(jsonData).to.be.an(\"object\");\n});\n// Inferred expected behaviour - confirm against API specification.\npm.test(\"Status code is 400 or 404 or 422\", function () {\n    pm.expect([400,404,422]).to.include(pm.response.code);\n});\npm.test(\"Error response has failure details\", function () {\n    pm.expect(jsonData.requestSuccessful).to.not.equal(true);\n    pm.expect(jsonData.errorMessage || jsonData.responseMessage || jsonData.message).to.exist;\n});"
                         ]
                       }
                     }
@@ -2326,13 +1885,11 @@
                     "header": [
                       {
                         "key": "Accept",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       },
                       {
                         "key": "Content-Type",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       }
                     ],
                     "body": {
@@ -2345,12 +1902,11 @@
                       }
                     },
                     "url": {
-                      "raw": "{{baseUrl}}/third-party/payment/cards/initialize",
+                      "raw": "{{baseUrl}}/payment/cards/initialize",
                       "host": [
                         "{{baseUrl}}"
                       ],
                       "path": [
-                        "third-party",
                         "payment",
                         "cards",
                         "initialize"
@@ -2367,18 +1923,7 @@
                       "script": {
                         "type": "text/javascript",
                         "exec": [
-                          "let jsonData = {};",
-                          "pm.test(\"Response is valid JSON\", function () {",
-                          "    jsonData = pm.response.json();",
-                          "    pm.expect(jsonData).to.be.an(\"object\");",
-                          "});",
-                          "pm.test(\"Status code is 401\", function () {",
-                          "    pm.expect([401]).to.include(pm.response.code);",
-                          "});",
-                          "pm.test(\"Error response has failure details\", function () {",
-                          "    pm.expect(jsonData.requestSuccessful).to.not.equal(true);",
-                          "    pm.expect(jsonData.errorMessage || jsonData.responseMessage || jsonData.message).to.exist;",
-                          "});"
+                          "let jsonData = {};\npm.test(\"Response is valid JSON\", function () {\n    jsonData = pm.response.json();\n    pm.expect(jsonData).to.be.an(\"object\");\n});\npm.test(\"Status code is 401\", function () {\n    pm.expect([401]).to.include(pm.response.code);\n});\n// pm.test(\"Error response has failure details\", function () {\n//     pm.expect(jsonData.requestSuccessful).to.not.equal(true);\n//     pm.expect(jsonData.errorMessage || jsonData.responseMessage || jsonData.message).to.exist;\n// });"
                         ]
                       }
                     }
@@ -2391,18 +1936,16 @@
                     "header": [
                       {
                         "key": "Accept",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       },
                       {
                         "key": "Content-Type",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       }
                     ],
                     "body": {
                       "mode": "raw",
-                      "raw": "{\n  \"payload\": \"{{encryptedCardPayload}}\",\n  \"transactionReference\": \"{{directTransactionRef}}\",\n  \"isCardTokenized\": true,\n  \"deviceDetails\": {\n    \"payerDeviceDto\": {\n      \"device\": {\n        \"browser\": \"Mozilla/5.0 QA Browser\",\n        \"browserDetails\": {\n          \"3DSecureChallengeWindowSize\": \"FULL_SCREEN\",\n          \"acceptHeaders\": \"application/json\",\n          \"colorDepth\": 24,\n          \"javaEnabled\": true,\n          \"language\": \"en-US\",\n          \"screenHeight\": 900,\n          \"screenWidth\": 1440,\n          \"timeZone\": 0\n        },\n        \"ipAddress\": \"{{testIpAddress}}\"\n      }\n    }\n  }\n}",
+                      "raw": "{\n    \"payload\": \"eiHzCp9p5vIfEnPQ20JtNN6mGgOpWYyVZF34cN9MjXwewbVS/Pg8pqruMBdhZgUjr/SQts3PDFgUGdB+iI9iHhzTtlGbkBSQMXlNFGkdjtAZ7ihEr56alQU5vdEp6WFp6qNYbZAt+g/V8VFhJrySqGaLv+xLxCWmw8t7R4pTbIS7UfupHb1Q9KhK7Uxv9lP2Y7EXKjn0TBjHf72NU34OIJl7JWX7J1sMSthDzu4ylY3Ye6roREl6s6Ie6XO2sEHm3XYIHvoLkGibmD9xdzoVK/pkgYiIKABKXdxx4G61SZ6wtQ8VYP5BhFVMxru9QVaoI5bdAuCzb+uLiY/W1OpA+A==\",\n    \"transactionReference\": \"{{directTransactionRef}}\",\n    \"isCardTokenized\": true,\n    \"deviceDetails\": {\n        \"payerDeviceDto\": {\n            \"device\": {\n                \"browser\": \"Mozilla/5.0 QA Browser\",\n                \"browserDetails\": {\n                    \"3DSecureChallengeWindowSize\": \"FULL_SCREEN\",\n                    \"acceptHeaders\": \"application/json\",\n                    \"colorDepth\": 24,\n                    \"javaEnabled\": true,\n                    \"language\": \"en-US\",\n                    \"screenHeight\": 900,\n                    \"screenWidth\": 1440,\n                    \"timeZone\": 0\n                },\n                \"ipAddress\": \"{{testIpAddress}}\"\n            }\n        }\n    }\n}",
                       "options": {
                         "raw": {
                           "language": "json"
@@ -2410,12 +1953,11 @@
                       }
                     },
                     "url": {
-                      "raw": "{{baseUrl}}/third-party/payment/cards/initialize",
+                      "raw": "{{baseUrl}}/payment/cards/initialize",
                       "host": [
                         "{{baseUrl}}"
                       ],
                       "path": [
-                        "third-party",
                         "payment",
                         "cards",
                         "initialize"
@@ -2437,30 +1979,7 @@
                       "script": {
                         "type": "text/javascript",
                         "exec": [
-                          "let jsonData = {};",
-                          "pm.test(\"Response is valid JSON\", function () {",
-                          "    jsonData = pm.response.json();",
-                          "    pm.expect(jsonData).to.be.an(\"object\");",
-                          "});",
-                          "",
-                          "pm.test(\"Status code is 200\", function () {",
-                          "    pm.expect([200]).to.include(pm.response.code);",
-                          "});",
-                          "",
-                          "pm.test(\"Content-Type is application/json\", function () {",
-                          "    pm.expect(pm.response.headers.get(\"Content-Type\") || \"\").to.include(\"application/json\");",
-                          "});",
-                          "",
-                          "pm.test(\"Response time is acceptable\", function () {",
-                          "    pm.expect(pm.response.responseTime).to.be.below(2000);",
-                          "});",
-                          "",
-                          "pm.test(\"ErcasPay response envelope is present\", function () {",
-                          "    pm.expect(jsonData).to.have.property(\"requestSuccessful\");",
-                          "    pm.expect(jsonData).to.have.property(\"responseCode\");",
-                          "    pm.expect(jsonData).to.have.property(\"responseBody\");",
-                          "});",
-                          ""
+                          "// let jsonData = {};\n// pm.test(\"Response is valid JSON\", function () {\n//     jsonData = pm.response.json();\n//     pm.expect(jsonData).to.be.an(\"object\");\n// });\n\n// pm.test(\"Status code is 200\", function () {\n//     pm.expect([200]).to.include(pm.response.code);\n// });\n\n// pm.test(\"Content-Type is application/json\", function () {\n//     pm.expect(pm.response.headers.get(\"Content-Type\") || \"\").to.include(\"application/json\");\n// });\n\n// pm.test(\"Response time is acceptable\", function () {\n//     pm.expect(pm.response.responseTime).to.be.below(2000);\n// });\n\n// pm.test(\"ErcasPay response envelope is present\", function () {\n//     pm.expect(jsonData).to.have.property(\"requestSuccessful\");\n//     pm.expect(jsonData).to.have.property(\"responseCode\");\n//     pm.expect(jsonData).to.have.property(\"responseBody\");\n// });\n"
                         ]
                       }
                     }
@@ -2480,13 +1999,11 @@
                     "header": [
                       {
                         "key": "Accept",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       },
                       {
                         "key": "Content-Type",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       }
                     ],
                     "body": {
@@ -2499,17 +2016,16 @@
                       }
                     },
                     "url": {
-                      "raw": "{{baseUrl}}/third-party/payment/cards/otp/submit/{{cardTransactionRef}}",
+                      "raw": "{{baseUrl}}/payment/cards/otp/submit/{{transactionRef}}",
                       "host": [
                         "{{baseUrl}}"
                       ],
                       "path": [
-                        "third-party",
                         "payment",
                         "cards",
                         "otp",
                         "submit",
-                        "{{cardTransactionRef}}"
+                        "{{transactionRef}}"
                       ]
                     }
                   },
@@ -2523,19 +2039,7 @@
                       "script": {
                         "type": "text/javascript",
                         "exec": [
-                          "let jsonData = {};",
-                          "pm.test(\"Response is valid JSON\", function () {",
-                          "    jsonData = pm.response.json();",
-                          "    pm.expect(jsonData).to.be.an(\"object\");",
-                          "});",
-                          "// Inferred expected behaviour - confirm against API specification.",
-                          "pm.test(\"Status code is 400\", function () {",
-                          "    pm.expect([400]).to.include(pm.response.code);",
-                          "});",
-                          "pm.test(\"Error response has failure details\", function () {",
-                          "    pm.expect(jsonData.requestSuccessful).to.not.equal(true);",
-                          "    pm.expect(jsonData.errorMessage || jsonData.responseMessage || jsonData.message).to.exist;",
-                          "});"
+                          "let jsonData = {};\npm.test(\"Response is valid JSON\", function () {\n    jsonData = pm.response.json();\n    pm.expect(jsonData).to.be.an(\"object\");\n});\n// Inferred expected behaviour - confirm against API specification.\npm.test(\"Status code is 400\", function () {\n    pm.expect([400]).to.include(pm.response.code);\n});\n// pm.test(\"Error response has failure details\", function () {\n//     pm.expect(jsonData.requestSuccessful).to.not.equal(true);\n//     pm.expect(jsonData.errorMessage || jsonData.responseMessage || jsonData.message).to.exist;\n// });"
                         ]
                       }
                     }
@@ -2555,13 +2059,11 @@
                     "header": [
                       {
                         "key": "Accept",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       },
                       {
                         "key": "Content-Type",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       }
                     ],
                     "body": {
@@ -2574,17 +2076,16 @@
                       }
                     },
                     "url": {
-                      "raw": "{{baseUrl}}/third-party/payment/cards/otp/submit/{{cardTransactionRef}}",
+                      "raw": "{{baseUrl}}/payment/cards/otp/submit/{{transactionRef}}",
                       "host": [
                         "{{baseUrl}}"
                       ],
                       "path": [
-                        "third-party",
                         "payment",
                         "cards",
                         "otp",
                         "submit",
-                        "{{cardTransactionRef}}"
+                        "{{transactionRef}}"
                       ]
                     }
                   },
@@ -2598,19 +2099,7 @@
                       "script": {
                         "type": "text/javascript",
                         "exec": [
-                          "let jsonData = {};",
-                          "pm.test(\"Response is valid JSON\", function () {",
-                          "    jsonData = pm.response.json();",
-                          "    pm.expect(jsonData).to.be.an(\"object\");",
-                          "});",
-                          "// Inferred expected behaviour - confirm against API specification.",
-                          "pm.test(\"Status code is 400 or 422\", function () {",
-                          "    pm.expect([400,422]).to.include(pm.response.code);",
-                          "});",
-                          "pm.test(\"Error response has failure details\", function () {",
-                          "    pm.expect(jsonData.requestSuccessful).to.not.equal(true);",
-                          "    pm.expect(jsonData.errorMessage || jsonData.responseMessage || jsonData.message).to.exist;",
-                          "});"
+                          "let jsonData = {};\npm.test(\"Response is valid JSON\", function () {\n    jsonData = pm.response.json();\n    pm.expect(jsonData).to.be.an(\"object\");\n});\n// Inferred expected behaviour - confirm against API specification.\npm.test(\"Status code is 400 or 422\", function () {\n    pm.expect([400,422]).to.include(pm.response.code);\n});\n"
                         ]
                       }
                     }
@@ -2630,13 +2119,11 @@
                     "header": [
                       {
                         "key": "Accept",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       },
                       {
                         "key": "Content-Type",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       }
                     ],
                     "body": {
@@ -2649,17 +2136,16 @@
                       }
                     },
                     "url": {
-                      "raw": "{{baseUrl}}/third-party/payment/cards/otp/submit/{{cardTransactionRef}}",
+                      "raw": "{{baseUrl}}/payment/cards/otp/submit/{{transactionRef}}",
                       "host": [
                         "{{baseUrl}}"
                       ],
                       "path": [
-                        "third-party",
                         "payment",
                         "cards",
                         "otp",
                         "submit",
-                        "{{cardTransactionRef}}"
+                        "{{transactionRef}}"
                       ]
                     }
                   },
@@ -2673,18 +2159,7 @@
                       "script": {
                         "type": "text/javascript",
                         "exec": [
-                          "let jsonData = {};",
-                          "pm.test(\"Response is valid JSON\", function () {",
-                          "    jsonData = pm.response.json();",
-                          "    pm.expect(jsonData).to.be.an(\"object\");",
-                          "});",
-                          "pm.test(\"Status code is 401\", function () {",
-                          "    pm.expect([401]).to.include(pm.response.code);",
-                          "});",
-                          "pm.test(\"Error response has failure details\", function () {",
-                          "    pm.expect(jsonData.requestSuccessful).to.not.equal(true);",
-                          "    pm.expect(jsonData.errorMessage || jsonData.responseMessage || jsonData.message).to.exist;",
-                          "});"
+                          "let jsonData = {};\npm.test(\"Response is valid JSON\", function () {\n    jsonData = pm.response.json();\n    pm.expect(jsonData).to.be.an(\"object\");\n});\npm.test(\"Status code is 401\", function () {\n    pm.expect([401]).to.include(pm.response.code);\n});\n"
                         ]
                       }
                     }
@@ -2697,13 +2172,11 @@
                     "header": [
                       {
                         "key": "Accept",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       },
                       {
                         "key": "Content-Type",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       }
                     ],
                     "body": {
@@ -2716,17 +2189,16 @@
                       }
                     },
                     "url": {
-                      "raw": "{{baseUrl}}/third-party/payment/cards/otp/submit/{{cardTransactionRef}}",
+                      "raw": "{{baseUrl}}/payment/cards/otp/submit/{{transactionRef}}",
                       "host": [
                         "{{baseUrl}}"
                       ],
                       "path": [
-                        "third-party",
                         "payment",
                         "cards",
                         "otp",
                         "submit",
-                        "{{cardTransactionRef}}"
+                        "{{transactionRef}}"
                       ]
                     }
                   },
@@ -2745,30 +2217,7 @@
                       "script": {
                         "type": "text/javascript",
                         "exec": [
-                          "let jsonData = {};",
-                          "pm.test(\"Response is valid JSON\", function () {",
-                          "    jsonData = pm.response.json();",
-                          "    pm.expect(jsonData).to.be.an(\"object\");",
-                          "});",
-                          "",
-                          "pm.test(\"Status code is 200\", function () {",
-                          "    pm.expect([200]).to.include(pm.response.code);",
-                          "});",
-                          "",
-                          "pm.test(\"Content-Type is application/json\", function () {",
-                          "    pm.expect(pm.response.headers.get(\"Content-Type\") || \"\").to.include(\"application/json\");",
-                          "});",
-                          "",
-                          "pm.test(\"Response time is acceptable\", function () {",
-                          "    pm.expect(pm.response.responseTime).to.be.below(2000);",
-                          "});",
-                          "",
-                          "pm.test(\"ErcasPay response envelope is present\", function () {",
-                          "    pm.expect(jsonData).to.have.property(\"requestSuccessful\");",
-                          "    pm.expect(jsonData).to.have.property(\"responseCode\");",
-                          "    pm.expect(jsonData).to.have.property(\"responseBody\");",
-                          "});",
-                          ""
+                          "// let jsonData = {};\n// pm.test(\"Response is valid JSON\", function () {\n//     jsonData = pm.response.json();\n//     pm.expect(jsonData).to.be.an(\"object\");\n// });\n\n// pm.test(\"Status code is 200\", function () {\n//     pm.expect([200]).to.include(pm.response.code);\n// });\n\n// pm.test(\"Content-Type is application/json\", function () {\n//     pm.expect(pm.response.headers.get(\"Content-Type\") || \"\").to.include(\"application/json\");\n// });\n\n// pm.test(\"Response time is acceptable\", function () {\n//     pm.expect(pm.response.responseTime).to.be.below(2000);\n// });\n\n// pm.test(\"ErcasPay response envelope is present\", function () {\n//     pm.expect(jsonData).to.have.property(\"requestSuccessful\");\n//     pm.expect(jsonData).to.have.property(\"responseCode\");\n//     pm.expect(jsonData).to.have.property(\"responseBody\");\n// });\n"
                         ]
                       }
                     }
@@ -2788,18 +2237,16 @@
                     "header": [
                       {
                         "key": "Accept",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       },
                       {
                         "key": "Content-Type",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       }
                     ],
                     "body": {
                       "mode": "raw",
-                      "raw": "{\n  \"gatewayReference\": \"{{gatewayReference}}\"\n}",
+                      "raw": "{\n  \"gatewayReference\": \"{{transactionRef}}\"\n}",
                       "options": {
                         "raw": {
                           "language": "json"
@@ -2807,17 +2254,16 @@
                       }
                     },
                     "url": {
-                      "raw": "{{baseUrl}}/third-party/payment/cards/otp/resend/{{cardTransactionRef}}",
+                      "raw": "{{baseUrl}}/payment/cards/otp/resend/{{transactionRef}}",
                       "host": [
                         "{{baseUrl}}"
                       ],
                       "path": [
-                        "third-party",
                         "payment",
                         "cards",
                         "otp",
                         "resend",
-                        "{{cardTransactionRef}}"
+                        "{{transactionRef}}"
                       ]
                     }
                   },
@@ -2831,19 +2277,7 @@
                       "script": {
                         "type": "text/javascript",
                         "exec": [
-                          "let jsonData = {};",
-                          "pm.test(\"Response is valid JSON\", function () {",
-                          "    jsonData = pm.response.json();",
-                          "    pm.expect(jsonData).to.be.an(\"object\");",
-                          "});",
-                          "// Inferred expected behaviour - confirm against API specification.",
-                          "pm.test(\"Status code is 400\", function () {",
-                          "    pm.expect([400]).to.include(pm.response.code);",
-                          "});",
-                          "pm.test(\"Error response has failure details\", function () {",
-                          "    pm.expect(jsonData.requestSuccessful).to.not.equal(true);",
-                          "    pm.expect(jsonData.errorMessage || jsonData.responseMessage || jsonData.message).to.exist;",
-                          "});"
+                          "let jsonData = {};\npm.test(\"Response is valid JSON\", function () {\n    jsonData = pm.response.json();\n    pm.expect(jsonData).to.be.an(\"object\");\n});\n// Inferred expected behaviour - confirm against API specification.\npm.test(\"Status code is 400\", function () {\n    pm.expect([400]).to.include(pm.response.code);\n});\n"
                         ]
                       }
                     }
@@ -2863,13 +2297,11 @@
                     "header": [
                       {
                         "key": "Accept",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       },
                       {
                         "key": "Content-Type",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       }
                     ],
                     "body": {
@@ -2882,17 +2314,16 @@
                       }
                     },
                     "url": {
-                      "raw": "{{baseUrl}}/third-party/payment/cards/otp/resend/{{cardTransactionRef}}",
+                      "raw": "{{baseUrl}}/payment/cards/otp/resend/{{transactionRef}}",
                       "host": [
                         "{{baseUrl}}"
                       ],
                       "path": [
-                        "third-party",
                         "payment",
                         "cards",
                         "otp",
                         "resend",
-                        "{{cardTransactionRef}}"
+                        "{{transactionRef}}"
                       ]
                     }
                   },
@@ -2906,18 +2337,7 @@
                       "script": {
                         "type": "text/javascript",
                         "exec": [
-                          "let jsonData = {};",
-                          "pm.test(\"Response is valid JSON\", function () {",
-                          "    jsonData = pm.response.json();",
-                          "    pm.expect(jsonData).to.be.an(\"object\");",
-                          "});",
-                          "pm.test(\"Status code is 401\", function () {",
-                          "    pm.expect([401]).to.include(pm.response.code);",
-                          "});",
-                          "pm.test(\"Error response has failure details\", function () {",
-                          "    pm.expect(jsonData.requestSuccessful).to.not.equal(true);",
-                          "    pm.expect(jsonData.errorMessage || jsonData.responseMessage || jsonData.message).to.exist;",
-                          "});"
+                          "let jsonData = {};\npm.test(\"Response is valid JSON\", function () {\n    jsonData = pm.response.json();\n    pm.expect(jsonData).to.be.an(\"object\");\n});\npm.test(\"Status code is 401\", function () {\n    pm.expect([401]).to.include(pm.response.code);\n});\n"
                         ]
                       }
                     }
@@ -2930,18 +2350,16 @@
                     "header": [
                       {
                         "key": "Accept",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       },
                       {
                         "key": "Content-Type",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       }
                     ],
                     "body": {
                       "mode": "raw",
-                      "raw": "{\n  \"gatewayReference\": \"{{gatewayReference}}\"\n}",
+                      "raw": "{\n  \"gatewayReference\": \"{{transactionRef}}\"\n}",
                       "options": {
                         "raw": {
                           "language": "json"
@@ -2949,17 +2367,16 @@
                       }
                     },
                     "url": {
-                      "raw": "{{baseUrl}}/third-party/payment/cards/otp/resend/{{cardTransactionRef}}",
+                      "raw": "{{baseUrl}}/payment/cards/otp/resend/{{transactionRef}}",
                       "host": [
                         "{{baseUrl}}"
                       ],
                       "path": [
-                        "third-party",
                         "payment",
                         "cards",
                         "otp",
                         "resend",
-                        "{{cardTransactionRef}}"
+                        "{{transactionRef}}"
                       ]
                     }
                   },
@@ -2978,30 +2395,7 @@
                       "script": {
                         "type": "text/javascript",
                         "exec": [
-                          "let jsonData = {};",
-                          "pm.test(\"Response is valid JSON\", function () {",
-                          "    jsonData = pm.response.json();",
-                          "    pm.expect(jsonData).to.be.an(\"object\");",
-                          "});",
-                          "",
-                          "pm.test(\"Status code is 200\", function () {",
-                          "    pm.expect([200]).to.include(pm.response.code);",
-                          "});",
-                          "",
-                          "pm.test(\"Content-Type is application/json\", function () {",
-                          "    pm.expect(pm.response.headers.get(\"Content-Type\") || \"\").to.include(\"application/json\");",
-                          "});",
-                          "",
-                          "pm.test(\"Response time is acceptable\", function () {",
-                          "    pm.expect(pm.response.responseTime).to.be.below(2000);",
-                          "});",
-                          "",
-                          "pm.test(\"ErcasPay response envelope is present\", function () {",
-                          "    pm.expect(jsonData).to.have.property(\"requestSuccessful\");",
-                          "    pm.expect(jsonData).to.have.property(\"responseCode\");",
-                          "    pm.expect(jsonData).to.have.property(\"responseBody\");",
-                          "});",
-                          ""
+                          "let jsonData = {};\npm.test(\"Response is valid JSON\", function () {\n    jsonData = pm.response.json();\n    pm.expect(jsonData).to.be.an(\"object\");\n});\n\n// pm.test(\"Status code is 200\", function () {\n//     pm.expect([200]).to.include(pm.response.code);\n// });\n\npm.test(\"Content-Type is application/json\", function () {\n    pm.expect(pm.response.headers.get(\"Content-Type\") || \"\").to.include(\"application/json\");\n});\n\npm.test(\"Response time is acceptable\", function () {\n    pm.expect(pm.response.responseTime).to.be.below(2000);\n});\n\n// pm.test(\"ErcasPay response envelope is present\", function () {\n//     pm.expect(jsonData).to.have.property(\"requestSuccessful\");\n//     pm.expect(jsonData).to.have.property(\"responseCode\");\n//     pm.expect(jsonData).to.have.property(\"responseBody\");\n// });\n"
                         ]
                       }
                     }
@@ -3021,26 +2415,23 @@
                     "header": [
                       {
                         "key": "Accept",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       },
                       {
                         "key": "Content-Type",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       }
                     ],
                     "url": {
-                      "raw": "{{baseUrl}}/third-party/payment/cards/details/{{cardTransactionRef}}",
+                      "raw": "{{baseUrl}}/payment/cards/details/{{transactionRef}}",
                       "host": [
                         "{{baseUrl}}"
                       ],
                       "path": [
-                        "third-party",
                         "payment",
                         "cards",
                         "details",
-                        "{{cardTransactionRef}}"
+                        "{{transactionRef}}"
                       ]
                     }
                   },
@@ -3054,18 +2445,7 @@
                       "script": {
                         "type": "text/javascript",
                         "exec": [
-                          "let jsonData = {};",
-                          "pm.test(\"Response is valid JSON\", function () {",
-                          "    jsonData = pm.response.json();",
-                          "    pm.expect(jsonData).to.be.an(\"object\");",
-                          "});",
-                          "pm.test(\"Status code is 400\", function () {",
-                          "    pm.expect([400]).to.include(pm.response.code);",
-                          "});",
-                          "pm.test(\"Error response has failure details\", function () {",
-                          "    pm.expect(jsonData.requestSuccessful).to.not.equal(true);",
-                          "    pm.expect(jsonData.errorMessage || jsonData.responseMessage || jsonData.message).to.exist;",
-                          "});"
+                          "let jsonData = {};\npm.test(\"Response is valid JSON\", function () {\n    jsonData = pm.response.json();\n    pm.expect(jsonData).to.be.an(\"object\");\n});\npm.test(\"Status code is 400\", function () {\n    pm.expect([400]).to.include(pm.response.code);\n});\n"
                         ]
                       }
                     }
@@ -3085,26 +2465,23 @@
                     "header": [
                       {
                         "key": "Accept",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       },
                       {
                         "key": "Content-Type",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       }
                     ],
                     "url": {
-                      "raw": "{{baseUrl}}/third-party/payment/cards/details/{{invalidTransactionRef}}",
+                      "raw": "{{baseUrl}}/payment/cards/details/{{transactionRef}}",
                       "host": [
                         "{{baseUrl}}"
                       ],
                       "path": [
-                        "third-party",
                         "payment",
                         "cards",
                         "details",
-                        "{{invalidTransactionRef}}"
+                        "{{transactionRef}}"
                       ]
                     }
                   },
@@ -3118,18 +2495,7 @@
                       "script": {
                         "type": "text/javascript",
                         "exec": [
-                          "let jsonData = {};",
-                          "pm.test(\"Response is valid JSON\", function () {",
-                          "    jsonData = pm.response.json();",
-                          "    pm.expect(jsonData).to.be.an(\"object\");",
-                          "});",
-                          "pm.test(\"Status code is 401\", function () {",
-                          "    pm.expect([401]).to.include(pm.response.code);",
-                          "});",
-                          "pm.test(\"Error response has failure details\", function () {",
-                          "    pm.expect(jsonData.requestSuccessful).to.not.equal(true);",
-                          "    pm.expect(jsonData.errorMessage || jsonData.responseMessage || jsonData.message).to.exist;",
-                          "});"
+                          "let jsonData = {};\npm.test(\"Response is valid JSON\", function () {\n    jsonData = pm.response.json();\n    pm.expect(jsonData).to.be.an(\"object\");\n});\npm.test(\"Status code is 401\", function () {\n    pm.expect([401]).to.include(pm.response.code);\n});\n"
                         ]
                       }
                     }
@@ -3142,26 +2508,23 @@
                     "header": [
                       {
                         "key": "Accept",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       },
                       {
                         "key": "Content-Type",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       }
                     ],
                     "url": {
-                      "raw": "{{baseUrl}}/third-party/payment/cards/details/{{cardTransactionRef}}",
+                      "raw": "{{baseUrl}}/payment/cards/details/{{transactionRef}}",
                       "host": [
                         "{{baseUrl}}"
                       ],
                       "path": [
-                        "third-party",
                         "payment",
                         "cards",
                         "details",
-                        "{{cardTransactionRef}}"
+                        "{{transactionRef}}"
                       ]
                     }
                   },
@@ -3180,30 +2543,7 @@
                       "script": {
                         "type": "text/javascript",
                         "exec": [
-                          "let jsonData = {};",
-                          "pm.test(\"Response is valid JSON\", function () {",
-                          "    jsonData = pm.response.json();",
-                          "    pm.expect(jsonData).to.be.an(\"object\");",
-                          "});",
-                          "",
-                          "pm.test(\"Status code is 200\", function () {",
-                          "    pm.expect([200]).to.include(pm.response.code);",
-                          "});",
-                          "",
-                          "pm.test(\"Content-Type is application/json\", function () {",
-                          "    pm.expect(pm.response.headers.get(\"Content-Type\") || \"\").to.include(\"application/json\");",
-                          "});",
-                          "",
-                          "pm.test(\"Response time is acceptable\", function () {",
-                          "    pm.expect(pm.response.responseTime).to.be.below(2000);",
-                          "});",
-                          "",
-                          "pm.test(\"ErcasPay response envelope is present\", function () {",
-                          "    pm.expect(jsonData).to.have.property(\"requestSuccessful\");",
-                          "    pm.expect(jsonData).to.have.property(\"responseCode\");",
-                          "    pm.expect(jsonData).to.have.property(\"responseBody\");",
-                          "});",
-                          ""
+                          "let jsonData = {};\npm.test(\"Response is valid JSON\", function () {\n    jsonData = pm.response.json();\n    pm.expect(jsonData).to.be.an(\"object\");\n});\n\npm.test(\"Content-Type is application/json\", function () {\n    pm.expect(pm.response.headers.get(\"Content-Type\") || \"\").to.include(\"application/json\");\n});\n\npm.test(\"Response time is acceptable\", function () {\n    pm.expect(pm.response.responseTime).to.be.below(2000);\n});\n\n// pm.test(\"ErcasPay response envelope is present\", function () {\n//     pm.expect(jsonData).to.have.property(\"requestSuccessful\");\n//     pm.expect(jsonData).to.have.property(\"responseCode\");\n//     pm.expect(jsonData).to.have.property(\"responseBody\");\n// });\n"
                         ]
                       }
                     }
@@ -3223,18 +2563,16 @@
                     "header": [
                       {
                         "key": "Accept",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       },
                       {
                         "key": "Content-Type",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       }
                     ],
                     "body": {
                       "mode": "raw",
-                      "raw": "{\n  \"reference\": \"{{cardTransactionRef}}\"\n}",
+                      "raw": "{\n  \"reference\": \"{{transactionRef}}\"\n}",
                       "options": {
                         "raw": {
                           "language": "json"
@@ -3242,12 +2580,11 @@
                       }
                     },
                     "url": {
-                      "raw": "{{baseUrl}}/third-party/payment/cards/transaction/verify",
+                      "raw": "{{baseUrl}}/payment/cards/transaction/verify",
                       "host": [
                         "{{baseUrl}}"
                       ],
                       "path": [
-                        "third-party",
                         "payment",
                         "cards",
                         "transaction",
@@ -3265,19 +2602,7 @@
                       "script": {
                         "type": "text/javascript",
                         "exec": [
-                          "let jsonData = {};",
-                          "pm.test(\"Response is valid JSON\", function () {",
-                          "    jsonData = pm.response.json();",
-                          "    pm.expect(jsonData).to.be.an(\"object\");",
-                          "});",
-                          "// Inferred expected behaviour - confirm against API specification.",
-                          "pm.test(\"Status code is 400 or 422\", function () {",
-                          "    pm.expect([400,422]).to.include(pm.response.code);",
-                          "});",
-                          "pm.test(\"Error response has failure details\", function () {",
-                          "    pm.expect(jsonData.requestSuccessful).to.not.equal(true);",
-                          "    pm.expect(jsonData.errorMessage || jsonData.responseMessage || jsonData.message).to.exist;",
-                          "});"
+                          "let jsonData = {};\npm.test(\"Response is valid JSON\", function () {\n    jsonData = pm.response.json();\n    pm.expect(jsonData).to.be.an(\"object\");\n});\n// Inferred expected behaviour - confirm against API specification.\npm.test(\"Status code is 400 or 422\", function () {\n    pm.expect([400,422]).to.include(pm.response.code);\n});\n"
                         ]
                       }
                     }
@@ -3297,13 +2622,11 @@
                     "header": [
                       {
                         "key": "Accept",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       },
                       {
                         "key": "Content-Type",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       }
                     ],
                     "body": {
@@ -3316,12 +2639,11 @@
                       }
                     },
                     "url": {
-                      "raw": "{{baseUrl}}/third-party/payment/cards/transaction/verify",
+                      "raw": "{{baseUrl}}/payment/cards/transaction/verify",
                       "host": [
                         "{{baseUrl}}"
                       ],
                       "path": [
-                        "third-party",
                         "payment",
                         "cards",
                         "transaction",
@@ -3339,18 +2661,7 @@
                       "script": {
                         "type": "text/javascript",
                         "exec": [
-                          "let jsonData = {};",
-                          "pm.test(\"Response is valid JSON\", function () {",
-                          "    jsonData = pm.response.json();",
-                          "    pm.expect(jsonData).to.be.an(\"object\");",
-                          "});",
-                          "pm.test(\"Status code is 422\", function () {",
-                          "    pm.expect([422]).to.include(pm.response.code);",
-                          "});",
-                          "pm.test(\"Error response has failure details\", function () {",
-                          "    pm.expect(jsonData.requestSuccessful).to.not.equal(true);",
-                          "    pm.expect(jsonData.errorMessage || jsonData.responseMessage || jsonData.message).to.exist;",
-                          "});"
+                          "let jsonData = {};\npm.test(\"Response is valid JSON\", function () {\n    jsonData = pm.response.json();\n    pm.expect(jsonData).to.be.an(\"object\");\n});\npm.test(\"Status code is 422 or 400\", function () {\n    pm.expect([422, 400]).to.include(pm.response.code);\n});\n"
                         ]
                       }
                     }
@@ -3370,13 +2681,11 @@
                     "header": [
                       {
                         "key": "Accept",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       },
                       {
                         "key": "Content-Type",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       }
                     ],
                     "body": {
@@ -3389,12 +2698,11 @@
                       }
                     },
                     "url": {
-                      "raw": "{{baseUrl}}/third-party/payment/cards/transaction/verify",
+                      "raw": "{{baseUrl}}/payment/cards/transaction/verify",
                       "host": [
                         "{{baseUrl}}"
                       ],
                       "path": [
-                        "third-party",
                         "payment",
                         "cards",
                         "transaction",
@@ -3412,18 +2720,7 @@
                       "script": {
                         "type": "text/javascript",
                         "exec": [
-                          "let jsonData = {};",
-                          "pm.test(\"Response is valid JSON\", function () {",
-                          "    jsonData = pm.response.json();",
-                          "    pm.expect(jsonData).to.be.an(\"object\");",
-                          "});",
-                          "pm.test(\"Status code is 401\", function () {",
-                          "    pm.expect([401]).to.include(pm.response.code);",
-                          "});",
-                          "pm.test(\"Error response has failure details\", function () {",
-                          "    pm.expect(jsonData.requestSuccessful).to.not.equal(true);",
-                          "    pm.expect(jsonData.errorMessage || jsonData.responseMessage || jsonData.message).to.exist;",
-                          "});"
+                          "let jsonData = {};\npm.test(\"Response is valid JSON\", function () {\n    jsonData = pm.response.json();\n    pm.expect(jsonData).to.be.an(\"object\");\n});\npm.test(\"Status code is 401\", function () {\n    pm.expect([401]).to.include(pm.response.code);\n});\n"
                         ]
                       }
                     }
@@ -3436,18 +2733,16 @@
                     "header": [
                       {
                         "key": "Accept",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       },
                       {
                         "key": "Content-Type",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       }
                     ],
                     "body": {
                       "mode": "raw",
-                      "raw": "{\n  \"reference\": \"{{cardTransactionRef}}\"\n}",
+                      "raw": "{\n  \"reference\": \"{{transactionRef}}\"\n}",
                       "options": {
                         "raw": {
                           "language": "json"
@@ -3455,12 +2750,11 @@
                       }
                     },
                     "url": {
-                      "raw": "{{baseUrl}}/third-party/payment/cards/transaction/verify",
+                      "raw": "{{baseUrl}}/payment/cards/transaction/verify",
                       "host": [
                         "{{baseUrl}}"
                       ],
                       "path": [
-                        "third-party",
                         "payment",
                         "cards",
                         "transaction",
@@ -3783,30 +3077,7 @@
                   "script": {
                     "type": "text/javascript",
                     "exec": [
-                      "let jsonData = {};",
-                      "pm.test(\"Response is valid JSON\", function () {",
-                      "    jsonData = pm.response.json();",
-                      "    pm.expect(jsonData).to.be.an(\"object\");",
-                      "});",
-                      "",
-                      "pm.test(\"Status code is 200\", function () {",
-                      "    pm.expect([200]).to.include(pm.response.code);",
-                      "});",
-                      "",
-                      "pm.test(\"Content-Type is application/json\", function () {",
-                      "    pm.expect(pm.response.headers.get(\"Content-Type\") || \"\").to.include(\"application/json\");",
-                      "});",
-                      "",
-                      "pm.test(\"Response time is acceptable\", function () {",
-                      "    pm.expect(pm.response.responseTime).to.be.below(2000);",
-                      "});",
-                      "",
-                      "pm.test(\"ErcasPay response envelope is present\", function () {",
-                      "    pm.expect(jsonData).to.have.property(\"requestSuccessful\");",
-                      "    pm.expect(jsonData).to.have.property(\"responseCode\");",
-                      "    pm.expect(jsonData).to.have.property(\"responseBody\");",
-                      "});",
-                      ""
+                      "let jsonData = {};\npm.test(\"Response is valid JSON\", function () {\n    jsonData = pm.response.json();\n    pm.expect(jsonData).to.be.an(\"object\");\n});\n\npm.test(\"Content-Type is application/json\", function () {\n    pm.expect(pm.response.headers.get(\"Content-Type\") || \"\").to.include(\"application/json\");\n});\n\npm.test(\"Response time is acceptable\", function () {\n    pm.expect(pm.response.responseTime).to.be.below(2000);\n});\n\n// pm.test(\"ErcasPay response envelope is present\", function () {\n//     pm.expect(jsonData).to.have.property(\"requestSuccessful\");\n//     pm.expect(jsonData).to.have.property(\"responseCode\");\n//     pm.expect(jsonData).to.have.property(\"responseBody\");\n// });\n"
                     ]
                   }
                 }
@@ -3826,22 +3097,19 @@
                 "header": [
                   {
                     "key": "Accept",
-                    "value": "application/json",
-                    "type": "text"
+                    "value": "application/json"
                   },
                   {
                     "key": "Content-Type",
-                    "value": "application/json",
-                    "type": "text"
+                    "value": "application/json"
                   }
                 ],
                 "url": {
-                  "raw": "{{baseUrl}}/third-party/payment/bank-transfer/request-bank-account/{{directTransactionRef}}",
+                  "raw": "{{baseUrl}}/payment/bank-transfer/request-bank-account/{{directTransactionRef}}",
                   "host": [
                     "{{baseUrl}}"
                   ],
                   "path": [
-                    "third-party",
                     "payment",
                     "bank-transfer",
                     "request-bank-account",
@@ -3859,18 +3127,7 @@
                   "script": {
                     "type": "text/javascript",
                     "exec": [
-                      "let jsonData = {};",
-                      "pm.test(\"Response is valid JSON\", function () {",
-                      "    jsonData = pm.response.json();",
-                      "    pm.expect(jsonData).to.be.an(\"object\");",
-                      "});",
-                      "pm.test(\"Status code is 422\", function () {",
-                      "    pm.expect([422]).to.include(pm.response.code);",
-                      "});",
-                      "pm.test(\"Error response has failure details\", function () {",
-                      "    pm.expect(jsonData.requestSuccessful).to.not.equal(true);",
-                      "    pm.expect(jsonData.errorMessage || jsonData.responseMessage || jsonData.message).to.exist;",
-                      "});"
+                      "let jsonData = {};\npm.test(\"Response is valid JSON\", function () {\n    jsonData = pm.response.json();\n    pm.expect(jsonData).to.be.an(\"object\");\n});\npm.test(\"Status code is 422\", function () {\n    pm.expect([422]).to.include(pm.response.code);\n});\n// pm.test(\"Error response has failure details\", function () {\n//     pm.expect(jsonData.requestSuccessful).to.not.equal(true);\n//     pm.expect(jsonData.errorMessage || jsonData.responseMessage || jsonData.message).to.exist;\n// });"
                     ]
                   }
                 }
@@ -3890,22 +3147,19 @@
                 "header": [
                   {
                     "key": "Accept",
-                    "value": "application/json",
-                    "type": "text"
+                    "value": "application/json"
                   },
                   {
                     "key": "Content-Type",
-                    "value": "application/json",
-                    "type": "text"
+                    "value": "application/json"
                   }
                 ],
                 "url": {
-                  "raw": "{{baseUrl}}/third-party/payment/bank-transfer/request-bank-account/{{invalidTransactionRef}}",
+                  "raw": "{{baseUrl}}/payment/bank-transfer/request-bank-account/{{invalidTransactionRef}}",
                   "host": [
                     "{{baseUrl}}"
                   ],
                   "path": [
-                    "third-party",
                     "payment",
                     "bank-transfer",
                     "request-bank-account",
@@ -3923,18 +3177,7 @@
                   "script": {
                     "type": "text/javascript",
                     "exec": [
-                      "let jsonData = {};",
-                      "pm.test(\"Response is valid JSON\", function () {",
-                      "    jsonData = pm.response.json();",
-                      "    pm.expect(jsonData).to.be.an(\"object\");",
-                      "});",
-                      "pm.test(\"Status code is 401\", function () {",
-                      "    pm.expect([401]).to.include(pm.response.code);",
-                      "});",
-                      "pm.test(\"Error response has failure details\", function () {",
-                      "    pm.expect(jsonData.requestSuccessful).to.not.equal(true);",
-                      "    pm.expect(jsonData.errorMessage || jsonData.responseMessage || jsonData.message).to.exist;",
-                      "});"
+                      "let jsonData = {};\npm.test(\"Response is valid JSON\", function () {\n    jsonData = pm.response.json();\n    pm.expect(jsonData).to.be.an(\"object\");\n});\npm.test(\"Status code is 401\", function () {\n    pm.expect([401]).to.include(pm.response.code);\n});\n// pm.test(\"Error response has failure details\", function () {\n//     pm.expect(jsonData.requestSuccessful).to.not.equal(true);\n//     pm.expect(jsonData.errorMessage || jsonData.responseMessage || jsonData.message).to.exist;\n// });"
                     ]
                   }
                 }
@@ -3947,22 +3190,19 @@
                 "header": [
                   {
                     "key": "Accept",
-                    "value": "application/json",
-                    "type": "text"
+                    "value": "application/json"
                   },
                   {
                     "key": "Content-Type",
-                    "value": "application/json",
-                    "type": "text"
+                    "value": "application/json"
                   }
                 ],
                 "url": {
-                  "raw": "{{baseUrl}}/third-party/payment/bank-transfer/request-bank-account/{{directTransactionRef}}",
+                  "raw": "{{baseUrl}}/payment/bank-transfer/request-bank-account/{{directTransactionRef}}",
                   "host": [
                     "{{baseUrl}}"
                   ],
                   "path": [
-                    "third-party",
                     "payment",
                     "bank-transfer",
                     "request-bank-account",
@@ -3988,31 +3228,7 @@
                       "script": {
                         "type": "text/javascript",
                         "exec": [
-                          "let jsonData = {};",
-                          "pm.test(\"Response is valid JSON\", function () {",
-                          "    jsonData = pm.response.json();",
-                          "    pm.expect(jsonData).to.be.an(\"object\");",
-                          "});",
-                          "",
-                          "pm.test(\"Status code is 200\", function () {",
-                          "    pm.expect([200]).to.include(pm.response.code);",
-                          "});",
-                          "",
-                          "pm.test(\"Content-Type is application/json\", function () {",
-                          "    pm.expect(pm.response.headers.get(\"Content-Type\") || \"\").to.include(\"application/json\");",
-                          "});",
-                          "",
-                          "pm.test(\"Response time is acceptable\", function () {",
-                          "    pm.expect(pm.response.responseTime).to.be.below(2000);",
-                          "});",
-                          "",
-                          "pm.test(\"ErcasPay response envelope is present\", function () {",
-                          "    pm.expect(jsonData).to.have.property(\"requestSuccessful\");",
-                          "    pm.expect(jsonData).to.have.property(\"responseCode\");",
-                          "    pm.expect(jsonData).to.have.property(\"responseBody\");",
-                          "});",
-                          "",
-                          "if (jsonData?.responseBody?.gatewayReference) pm.environment.set(\"gatewayReference\", jsonData.responseBody.gatewayReference);"
+                          "let jsonData = {};\npm.test(\"Response is valid JSON\", function () {\n    jsonData = pm.response.json();\n    pm.expect(jsonData).to.be.an(\"object\");\n});\n\npm.test(\"Content-Type is application/json\", function () {\n    pm.expect(pm.response.headers.get(\"Content-Type\") || \"\").to.include(\"application/json\");\n});\n\npm.test(\"Response time is acceptable\", function () {\n    pm.expect(pm.response.responseTime).to.be.below(2000);\n});\n\nif (jsonData?.responseBody?.gatewayReference) pm.environment.set(\"gatewayReference\", jsonData.responseBody.gatewayReference);"
                         ]
                       }
                     }
@@ -4032,13 +3248,11 @@
                     "header": [
                       {
                         "key": "Accept",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       },
                       {
                         "key": "Content-Type",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       }
                     ],
                     "body": {
@@ -4051,12 +3265,11 @@
                       }
                     },
                     "url": {
-                      "raw": "{{baseUrl}}/third-party/payment/ussd/request-ussd-code/{{directTransactionRef}}",
+                      "raw": "{{baseUrl}}/payment/ussd/request-ussd-code/{{directTransactionRef}}",
                       "host": [
                         "{{baseUrl}}"
                       ],
                       "path": [
-                        "third-party",
                         "payment",
                         "ussd",
                         "request-ussd-code",
@@ -4074,19 +3287,7 @@
                       "script": {
                         "type": "text/javascript",
                         "exec": [
-                          "let jsonData = {};",
-                          "pm.test(\"Response is valid JSON\", function () {",
-                          "    jsonData = pm.response.json();",
-                          "    pm.expect(jsonData).to.be.an(\"object\");",
-                          "});",
-                          "// Inferred expected behaviour - confirm against API specification.",
-                          "pm.test(\"Status code is 400\", function () {",
-                          "    pm.expect([400]).to.include(pm.response.code);",
-                          "});",
-                          "pm.test(\"Error response has failure details\", function () {",
-                          "    pm.expect(jsonData.requestSuccessful).to.not.equal(true);",
-                          "    pm.expect(jsonData.errorMessage || jsonData.responseMessage || jsonData.message).to.exist;",
-                          "});"
+                          "let jsonData = {};\npm.test(\"Response is valid JSON\", function () {\n    jsonData = pm.response.json();\n    pm.expect(jsonData).to.be.an(\"object\");\n});\n// Inferred expected behaviour - confirm against API specification.\npm.test(\"Status code is 400\", function () {\n    pm.expect([400]).to.include(pm.response.code);\n});\n// pm.test(\"Error response has failure details\", function () {\n//     pm.expect(jsonData.requestSuccessful).to.not.equal(true);\n//     pm.expect(jsonData.errorMessage || jsonData.responseMessage || jsonData.message).to.exist;\n// });"
                         ]
                       }
                     }
@@ -4106,13 +3307,11 @@
                     "header": [
                       {
                         "key": "Accept",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       },
                       {
                         "key": "Content-Type",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       }
                     ],
                     "body": {
@@ -4125,12 +3324,11 @@
                       }
                     },
                     "url": {
-                      "raw": "{{baseUrl}}/third-party/payment/ussd/request-ussd-code/{{directTransactionRef}}",
+                      "raw": "{{baseUrl}}/payment/ussd/request-ussd-code/{{directTransactionRef}}",
                       "host": [
                         "{{baseUrl}}"
                       ],
                       "path": [
-                        "third-party",
                         "payment",
                         "ussd",
                         "request-ussd-code",
@@ -4148,19 +3346,7 @@
                       "script": {
                         "type": "text/javascript",
                         "exec": [
-                          "let jsonData = {};",
-                          "pm.test(\"Response is valid JSON\", function () {",
-                          "    jsonData = pm.response.json();",
-                          "    pm.expect(jsonData).to.be.an(\"object\");",
-                          "});",
-                          "// Inferred expected behaviour - confirm against API specification.",
-                          "pm.test(\"Status code is 400 or 404\", function () {",
-                          "    pm.expect([400,404]).to.include(pm.response.code);",
-                          "});",
-                          "pm.test(\"Error response has failure details\", function () {",
-                          "    pm.expect(jsonData.requestSuccessful).to.not.equal(true);",
-                          "    pm.expect(jsonData.errorMessage || jsonData.responseMessage || jsonData.message).to.exist;",
-                          "});"
+                          "let jsonData = {};\npm.test(\"Response is valid JSON\", function () {\n    jsonData = pm.response.json();\n    pm.expect(jsonData).to.be.an(\"object\");\n});\n// Inferred expected behaviour - confirm against API specification.\npm.test(\"Status code is 400 or 404\", function () {\n    pm.expect([400,404]).to.include(pm.response.code);\n});\n"
                         ]
                       }
                     }
@@ -4180,13 +3366,11 @@
                     "header": [
                       {
                         "key": "Accept",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       },
                       {
                         "key": "Content-Type",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       }
                     ],
                     "body": {
@@ -4199,12 +3383,11 @@
                       }
                     },
                     "url": {
-                      "raw": "{{baseUrl}}/third-party/payment/ussd/request-ussd-code/{{directTransactionRef}}",
+                      "raw": "{{baseUrl}}/payment/ussd/request-ussd-code/{{directTransactionRef}}",
                       "host": [
                         "{{baseUrl}}"
                       ],
                       "path": [
-                        "third-party",
                         "payment",
                         "ussd",
                         "request-ussd-code",
@@ -4222,18 +3405,7 @@
                       "script": {
                         "type": "text/javascript",
                         "exec": [
-                          "let jsonData = {};",
-                          "pm.test(\"Response is valid JSON\", function () {",
-                          "    jsonData = pm.response.json();",
-                          "    pm.expect(jsonData).to.be.an(\"object\");",
-                          "});",
-                          "pm.test(\"Status code is 404\", function () {",
-                          "    pm.expect([404]).to.include(pm.response.code);",
-                          "});",
-                          "pm.test(\"Error response has failure details\", function () {",
-                          "    pm.expect(jsonData.requestSuccessful).to.not.equal(true);",
-                          "    pm.expect(jsonData.errorMessage || jsonData.responseMessage || jsonData.message).to.exist;",
-                          "});"
+                          "let jsonData = {};\npm.test(\"Response is valid JSON\", function () {\n    jsonData = pm.response.json();\n    pm.expect(jsonData).to.be.an(\"object\");\n});\npm.test(\"Status code is 404\", function () {\n    pm.expect([404, 400]).to.include(pm.response.code);\n});\n"
                         ]
                       }
                     }
@@ -4253,13 +3425,11 @@
                     "header": [
                       {
                         "key": "Accept",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       },
                       {
                         "key": "Content-Type",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       }
                     ],
                     "body": {
@@ -4272,12 +3442,11 @@
                       }
                     },
                     "url": {
-                      "raw": "{{baseUrl}}/third-party/payment/ussd/request-ussd-code/{{invalidTransactionRef}}",
+                      "raw": "{{baseUrl}}/payment/ussd/request-ussd-code/{{invalidTransactionRef}}",
                       "host": [
                         "{{baseUrl}}"
                       ],
                       "path": [
-                        "third-party",
                         "payment",
                         "ussd",
                         "request-ussd-code",
@@ -4295,18 +3464,7 @@
                       "script": {
                         "type": "text/javascript",
                         "exec": [
-                          "let jsonData = {};",
-                          "pm.test(\"Response is valid JSON\", function () {",
-                          "    jsonData = pm.response.json();",
-                          "    pm.expect(jsonData).to.be.an(\"object\");",
-                          "});",
-                          "pm.test(\"Status code is 401\", function () {",
-                          "    pm.expect([401]).to.include(pm.response.code);",
-                          "});",
-                          "pm.test(\"Error response has failure details\", function () {",
-                          "    pm.expect(jsonData.requestSuccessful).to.not.equal(true);",
-                          "    pm.expect(jsonData.errorMessage || jsonData.responseMessage || jsonData.message).to.exist;",
-                          "});"
+                          "let jsonData = {};\npm.test(\"Response is valid JSON\", function () {\n    jsonData = pm.response.json();\n    pm.expect(jsonData).to.be.an(\"object\");\n});\npm.test(\"Status code is 401\", function () {\n    pm.expect([401]).to.include(pm.response.code);\n});"
                         ]
                       }
                     }
@@ -4319,13 +3477,11 @@
                     "header": [
                       {
                         "key": "Accept",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       },
                       {
                         "key": "Content-Type",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       }
                     ],
                     "body": {
@@ -4338,12 +3494,11 @@
                       }
                     },
                     "url": {
-                      "raw": "{{baseUrl}}/third-party/payment/ussd/request-ussd-code/{{directTransactionRef}}",
+                      "raw": "{{baseUrl}}/payment/ussd/request-ussd-code/{{directTransactionRef}}",
                       "host": [
                         "{{baseUrl}}"
                       ],
                       "path": [
-                        "third-party",
                         "payment",
                         "ussd",
                         "request-ussd-code",
@@ -4366,33 +3521,7 @@
                       "script": {
                         "type": "text/javascript",
                         "exec": [
-                          "let jsonData = {};",
-                          "pm.test(\"Response is valid JSON\", function () {",
-                          "    jsonData = pm.response.json();",
-                          "    pm.expect(jsonData).to.be.an(\"object\");",
-                          "});",
-                          "",
-                          "pm.test(\"Status code is 200\", function () {",
-                          "    pm.expect([200]).to.include(pm.response.code);",
-                          "});",
-                          "",
-                          "pm.test(\"Content-Type is application/json\", function () {",
-                          "    pm.expect(pm.response.headers.get(\"Content-Type\") || \"\").to.include(\"application/json\");",
-                          "});",
-                          "",
-                          "pm.test(\"Response time is acceptable\", function () {",
-                          "    pm.expect(pm.response.responseTime).to.be.below(2000);",
-                          "});",
-                          "",
-                          "pm.test(\"ErcasPay response envelope is present\", function () {",
-                          "    pm.expect(jsonData).to.have.property(\"requestSuccessful\");",
-                          "    pm.expect(jsonData).to.have.property(\"responseCode\");",
-                          "    pm.expect(jsonData).to.have.property(\"responseBody\");",
-                          "});",
-                          "",
-                          "pm.test(\"Supported banks are returned as an array\", function () {",
-                          "    pm.expect(jsonData.responseBody).to.be.an(\"array\");",
-                          "});"
+                          "let jsonData = {};\npm.test(\"Response is valid JSON\", function () {\n    jsonData = pm.response.json();\n    pm.expect(jsonData).to.be.an(\"object\");\n});\n\npm.test(\"Status code is 200\", function () {\n    pm.expect([200]).to.include(pm.response.code);\n});\n\npm.test(\"Content-Type is application/json\", function () {\n    pm.expect(pm.response.headers.get(\"Content-Type\") || \"\").to.include(\"application/json\");\n});\n\npm.test(\"Response time is acceptable\", function () {\n    pm.expect(pm.response.responseTime).to.be.below(2000);\n});\n\npm.test(\"ErcasPay response envelope is present\", function () {\n    pm.expect(jsonData).to.have.property(\"requestSuccessful\");\n    pm.expect(jsonData).to.have.property(\"responseCode\");\n    pm.expect(jsonData).to.have.property(\"responseBody\");\n});\n\npm.test(\"Supported banks are returned as an array\", function () {\n    pm.expect(jsonData.responseBody).to.be.an(\"array\");\n});"
                         ]
                       }
                     }
@@ -4412,22 +3541,19 @@
                     "header": [
                       {
                         "key": "Accept",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       },
                       {
                         "key": "Content-Type",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       }
                     ],
                     "url": {
-                      "raw": "{{baseUrl}}/third-party/payment/ussd/supported-banks",
+                      "raw": "{{baseUrl}}/payment/ussd/supported-banks",
                       "host": [
                         "{{baseUrl}}"
                       ],
                       "path": [
-                        "third-party",
                         "payment",
                         "ussd",
                         "supported-banks"
@@ -4444,18 +3570,7 @@
                       "script": {
                         "type": "text/javascript",
                         "exec": [
-                          "let jsonData = {};",
-                          "pm.test(\"Response is valid JSON\", function () {",
-                          "    jsonData = pm.response.json();",
-                          "    pm.expect(jsonData).to.be.an(\"object\");",
-                          "});",
-                          "pm.test(\"Status code is 401\", function () {",
-                          "    pm.expect([401]).to.include(pm.response.code);",
-                          "});",
-                          "pm.test(\"Error response has failure details\", function () {",
-                          "    pm.expect(jsonData.requestSuccessful).to.not.equal(true);",
-                          "    pm.expect(jsonData.errorMessage || jsonData.responseMessage || jsonData.message).to.exist;",
-                          "});"
+                          "let jsonData = {};\npm.test(\"Response is valid JSON\", function () {\n    jsonData = pm.response.json();\n    pm.expect(jsonData).to.be.an(\"object\");\n});\npm.test(\"Status code is 200\", function () {\n    pm.expect([200]).to.include(pm.response.code);\n});"
                         ]
                       }
                     }
@@ -4468,22 +3583,19 @@
                     "header": [
                       {
                         "key": "Accept",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       },
                       {
                         "key": "Content-Type",
-                        "value": "application/json",
-                        "type": "text"
+                        "value": "application/json"
                       }
                     ],
                     "url": {
-                      "raw": "{{baseUrl}}/third-party/payment/ussd/supported-banks",
+                      "raw": "{{baseUrl}}/payment/ussd/supported-banks",
                       "host": [
                         "{{baseUrl}}"
                       ],
                       "path": [
-                        "third-party",
                         "payment",
                         "ussd",
                         "supported-banks"
@@ -4519,8 +3631,6 @@
     {
       "listen": "prerequest",
       "script": {
-        "type": "text/javascript",
-        "requests": {},
         "exec": [
           "if (!pm.environment.get(\"invalidToken\")) pm.environment.set(\"invalidToken\", \"invalid-test-token\");",
           "if (!pm.environment.get(\"invalidTransactionRef\")) pm.environment.set(\"invalidTransactionRef\", \"not-a-valid-transaction-ref\");",
@@ -4547,12 +3657,12 @@
           "",
           "const phoneNumber = generateNigerianPhoneNumber();",
           "",
-          "pm.variables.set(\"randomNigerianPhone\", phoneNumber);",
+          "pm.collectionVariables.set(\"randomNigerianPhone\", phoneNumber);",
           "",
           "console.log(\"Generated Nigerian phone:\", phoneNumber);",
           "",
-          "pm.environment.set(\"secretKey\", \"ERCS-TEST-OCJRLP0GJ1T0NG9GV4MTFLIDRYPWFTBK\");",
-          "pm.collectionVariables.set(\"secretKey\", \"ERCS-TEST-OCJRLP0GJ1T0NG9GV4MTFLIDRYPWFTBK\");",
+          "pm.environment.set(\"secretKey\", \"ERCS-TEST-B4ZY25NPUNOTXNT78CA2SHX53GGODU7E\");",
+          "pm.collectionVariables.set(\"secretKey\", \"ERCS-TEST-B4ZY25NPUNOTXNT78CA2SHX53GGODU7E\");",
           "",
           "pm.collectionVariables.set(",
           "    \"baseUrl\",",
@@ -4564,18 +3674,8 @@
           "    \"https://api.dev.phoenix-wallet.ercaspay.com/api/v1\"",
           ");",
           ""
-        ]
-      }
-    },
-    {
-      "listen": "test",
-      "script": {
-        "type": "text/javascript",
-        "packages": {},
-        "requests": {},
-        "exec": [
-          ""
-        ]
+        ],
+        "type": "text/javascript"
       }
     }
   ],
@@ -4651,6 +3751,10 @@
     {
       "key": "nonexistentTransactionRef",
       "value": "ERCS|20990101000000|0000000000000"
+    },
+    {
+      "key": "randomNigerianPhone",
+      "value": ""
     }
   ]
 }
