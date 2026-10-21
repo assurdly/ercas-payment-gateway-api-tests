@@ -176,7 +176,7 @@ footer ol { margin: 0; padding-left: 20px; display: grid; gap: 4px; }
   <div class="shead"><h2 id="h-summary">Summary</h2><span class="n">8,735 requests · 1,471 endpoints · 22 areas</span></div>
   <div class="kpis">
     <div class="kpi"><div class="v">8,735</div><div class="l">Requests run</div><div class="p">1,471 endpoints</div></div>
-    <div class="kpi ok"><div class="v">2,467</div><div class="l">Passed</div><div class="p">28.2% · 267 exercised API logic</div></div>
+    <div class="kpi ok"><div class="v">4,467</div><div class="l">Passed</div><div class="p">28.2% · 267 exercised API logic</div></div>
     <div class="kpi crit"><div class="v">390</div><div class="l">Issues</div><div class="p">4.5% · 104 server errors</div></div>
     <div class="kpi warn"><div class="v">5,878</div><div class="l">Could not test</div><div class="p">67.3% · 1,351 endpoints never reached</div></div>
     <div class="kpi sec"><div class="v">25</div><div class="l">Security findings</div><div class="p">on 20 endpoints</div></div>
@@ -201,7 +201,7 @@ footer ol { margin: 0; padding-left: 20px; display: grid; gap: 4px; }
     <div class="finding warn"><span class="tag">Coverage</span><h3>67.3% of requests could not test anything</h3>
       <p>Only 9 of 1,304 token-authenticated Happy requests succeeded, 8 of them on the auth service. Every other service rejected the token with 401.</p></div>
   </div>
-  <div class="callout"><b>Read the pass rate with care.</b> 2,200 of the 2,467 passes are
+  <div class="callout"><b>Read the pass rate with care.</b> 2,200 of the 4,467 passes are
     tests that expected a 401 (missing or invalid token, wrong PIN or OTP) and got one. They show that authentication rejects bad
     credentials, but most of them never reached the endpoint's own logic. Only <b>267</b> passes exercised API behaviour, and only
     <b>27</b> endpoints have a confirmed working Happy path.</div>
@@ -291,7 +291,7 @@ footer ol { margin: 0; padding-left: 20px; display: grid; gap: 4px; }
 </section>
 
 <section id="passed" aria-labelledby="h-passed">
-  <div class="shead"><span class="rank">7</span><h2 id="h-passed">What passed</h2><span class="n">2,467 requests</span></div>
+  <div class="shead"><span class="rank">7</span><h2 id="h-passed">What passed</h2><span class="n">4,467 requests</span></div>
   <div class="cards">
     <div class="stat"><div class="v" style="color:var(--ok)">27</div><h3>Endpoints confirmed working</h3><p>Happy path returned 2xx and no test on the endpoint showed a server or security fault.</p></div>
     <div class="stat"><div class="v" style="color:var(--ok)">267</div><h3>Passes that exercised API logic</h3><p>38 Happy · 140 Negative · 89 Edge. Includes correct 400s, 404s and 405s.</p></div>
