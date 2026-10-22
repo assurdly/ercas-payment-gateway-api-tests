@@ -1,0 +1,1 @@
+{"success": false, "errors": {"success": false, "requestSuccessful": false, "responseCode": "07", "responseMessage": "transaction_reference: The provided transaction reference does not exist.", "errorMessage": "transaction_reference: The provided transaction reference does not exist.", "responseBody": {}, "statusCode": "400"}}

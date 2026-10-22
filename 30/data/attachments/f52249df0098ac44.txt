@@ -1,0 +1,23 @@
+{
+    "payload": "eiHzCp9p5vIfEnPQ20JtNN6mGgOpWYyVZF34cN9MjXwewbVS/Pg8pqruMBdhZgUjr/SQts3PDFgUGdB+iI9iHhzTtlGbkBSQMXlNFGkdjtAZ7ihEr56alQU5vdEp6WFp6qNYbZAt+g/V8VFhJrySqGaLv+xLxCWmw8t7R4pTbIS7UfupHb1Q9KhK7Uxv9lP2Y7EXKjn0TBjHf72NU34OIJl7JWX7J1sMSthDzu4ylY3Ye6roREl6s6Ie6XO2sEHm3XYIHvoLkGibmD9xdzoVK/pkgYiIKABKXdxx4G61SZ6wtQ8VYP5BhFVMxru9QVaoI5bdAuCzb+uLiY/W1OpA+A==",
+    "transactionReference": "ER|ZDU8XBZEX4SEDL",
+    "isCardTokenized": true,
+    "deviceDetails": {
+        "payerDeviceDto": {
+            "device": {
+                "browser": "Mozilla/5.0 QA Browser",
+                "browserDetails": {
+                    "3DSecureChallengeWindowSize": "FULL_SCREEN",
+                    "acceptHeaders": "application/json",
+                    "colorDepth": 24,
+                    "javaEnabled": true,
+                    "language": "en-US",
+                    "screenHeight": 900,
+                    "screenWidth": 1440,
+                    "timeZone": 0
+                },
+                "ipAddress": "127.0.0.1"
+            }
+        }
+    }
+}

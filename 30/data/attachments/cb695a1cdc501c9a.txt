@@ -1,0 +1,12 @@
+let jsonData = {};
+pm.test("Response is valid JSON", function () {
+    jsonData = pm.response.json();
+    pm.expect(jsonData).to.be.an("object");
+});
+pm.test("Status code is 422", function () {
+    pm.expect([422]).to.include(pm.response.code);
+});
+// pm.test("Error response has failure details", function () {
+//     pm.expect(jsonData.requestSuccessful).to.not.equal(true);
+//     pm.expect(jsonData.errorMessage || jsonData.responseMessage || jsonData.message).to.exist;
+// });

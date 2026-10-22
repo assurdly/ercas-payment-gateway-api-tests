@@ -1,0 +1,1 @@
+{"success": false, "errors": {"success": false, "requestSuccessful": false, "responseCode": "07", "responseMessage": "amount: Ensure this value is greater than or equal to 0.", "errorMessage": "amount: Ensure this value is greater than or equal to 0.", "responseBody": {}, "statusCode": "400"}}

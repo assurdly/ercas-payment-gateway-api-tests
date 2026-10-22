@@ -1,0 +1,17 @@
+{
+  "paymentReference": "QA-1792703689857-{{$randomInt}",
+  "paymentMethods": "card,bank-transfer,ussd,qrcode",
+  "customerName": "Gabriel Rosenbaum",
+  "customerEmail": "qa.1792703689857@example.com",
+  "customerPhoneNumber": "09027119041",
+  "redirectUrl": "https://example.com/payments/callback",
+  "description": "QA payment initiation test",
+  "currency": "NGN",
+  "feeBearer": "customer",
+  "isCardTokenized": true,
+  "metadata": {
+    "firstname": "Norene",
+    "lastname": "Kiehn",
+    "email": "qa.1792703689857@example.com"
+  }
+}
