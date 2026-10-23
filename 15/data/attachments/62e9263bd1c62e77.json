@@ -1,0 +1,14 @@
+{
+    "Content-Length": "0",
+    "Connection": "keep-alive",
+    "Date": "Fri, 23 Oct 2026 20:53:28 GMT",
+    "Server": "Kestrel",
+    "X-Request-Id": "a5b86549-720d-4e50-a1f5-481e63e2bc7c",
+    "vary": "Origin",
+    "Access-Control-Allow-Credentials": "true",
+    "Access-Control-Expose-Headers": "X-Auth-Token,X-RateLimit-Remaining",
+    "X-Kong-Upstream-Latency": "2",
+    "X-Kong-Proxy-Latency": "1",
+    "Via": "1.1 kong/3.9.3",
+    "X-Kong-Request-Id": "2064f377b381065439cb5d0cfad3635d"
+}

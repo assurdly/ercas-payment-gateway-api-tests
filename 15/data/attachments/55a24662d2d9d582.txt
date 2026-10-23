@@ -1,0 +1,7 @@
+{
+  "nin": "",
+  "user": "",
+  "state": "",
+  "local_government": "",
+  "address": ""
+}

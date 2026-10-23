@@ -1,0 +1,9 @@
+{
+  "firstname": "string",
+  "middlename": "string",
+  "date_of_birth": "2026-07-29",
+  "gender": "Male",
+  "address": "1 Test Street",
+  "state": "Lagos",
+  "local_government": "Ikeja"
+}

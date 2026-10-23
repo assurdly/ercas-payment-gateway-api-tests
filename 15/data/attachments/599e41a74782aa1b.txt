@@ -1,0 +1,6 @@
+{
+  "recipient_account_number": "",
+  "narration": "string",
+  "amount": "1000.00",
+  "pin": "invalid"
+}

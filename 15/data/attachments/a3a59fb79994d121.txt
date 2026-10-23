@@ -1,0 +1,7 @@
+{
+  "gift_id": "h22gffwm2tvr9ssfwcr8fama",
+  "batch_id": "h22gffwm2tvr9ssfwcr8fama",
+  "currency": "string",
+  "amount": -1,
+  "win_id": "h22gffwm2tvr9ssfwcr8fama"
+}

@@ -1,0 +1,8 @@
+{
+  "coins_required": 1,
+  "reward_name": "string",
+  "reward_type": "invalid_option",
+  "reward_value": "string",
+  "is_tangible": false,
+  "is_active": true
+}

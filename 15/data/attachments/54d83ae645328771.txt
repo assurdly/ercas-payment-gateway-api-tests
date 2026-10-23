@@ -1,0 +1,9 @@
+{
+  "impact_transaction_type": [
+    "Transfer"
+  ],
+  "debit_percentage": "string",
+  "debit_cap": "0.00",
+  "duration": 1,
+  "pin": "1234"
+}

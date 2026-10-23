@@ -1,0 +1,13 @@
+{
+  "product_type": "",
+  "amount": "",
+  "phone": "",
+  "network": "",
+  "sender_account": "",
+  "tenor_id": "",
+  "repayment_frequency": "",
+  "service": "",
+  "data_plan_code": "",
+  "channel": "",
+  "pin": ""
+}

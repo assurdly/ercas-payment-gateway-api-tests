@@ -1,0 +1,1 @@
+{"type":"validation_error","code":"invalid","message":"Please use other delivery methods, doorstep delivery is not available","field_name":"delivery"}

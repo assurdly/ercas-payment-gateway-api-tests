@@ -1,0 +1,6 @@
+{
+  "email": "qa.personal-banking@example.com",
+  "phone": "08000000000",
+  "nin": "",
+  "bvn": ""
+}

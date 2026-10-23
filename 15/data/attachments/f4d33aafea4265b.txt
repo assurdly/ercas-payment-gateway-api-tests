@@ -1,0 +1,14 @@
+{
+  "account": "",
+  "target_amount": "",
+  "autosave_amount": "",
+  "pin": "",
+  "start_date": "",
+  "autosave_frequency": "",
+  "autosave_day_of_week": "",
+  "autosave_calendar_day": "",
+  "duration": "",
+  "duration_type": "",
+  "target_product": "",
+  "target_name": ""
+}
