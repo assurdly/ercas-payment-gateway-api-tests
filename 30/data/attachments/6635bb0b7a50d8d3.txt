@@ -1,1 +1,0 @@
-{"success": false, "errors": {"success": false, "requestSuccessful": false, "responseCode": "07", "responseMessage": "payment_method: This field is required.; reference: This field may not be blank.", "errorMessage": "payment_method: This field is required.; reference: This field may not be blank.", "responseBody": {}, "statusCode": "400"}}

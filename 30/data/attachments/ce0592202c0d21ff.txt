@@ -1,1 +1,0 @@
-{"requestSuccessful":true,"responseCode":"success","responseMessage":"Success","responseBody":{"status":"SUCCESS","gatewayMessage":"Success","transactionReference":"ER|ZDU8XBZEX4SEDL","gatewayReference":"ZGV1NEKFL8TWP4","ussdCode":"8970","paymentCode":"*329*000*8970#","amount":101.4,"actualAmount":100.0,"fee":1.4,"expires_in":299},"statusCode":200}

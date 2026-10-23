@@ -1,4 +1,0 @@
-{
-  "transactionReference": "ER|ZDU8XBZEX4SEDL",
-  "isCardTokenized": true
-}

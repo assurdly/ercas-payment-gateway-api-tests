@@ -1,1 +1,0 @@
-{"requestSuccessful":true,"responseCode":"success","responseMessage":"Success","responseBody":{"amount":123.0,"actualAmount":"100.00","fee":23.0,"reference":"ER|ZDU8XBZEX4SEDL","currency":"NGN"},"statusCode":200}

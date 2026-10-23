@@ -1,1 +1,0 @@
-{"success": false, "errors": {"success": false, "requestSuccessful": false, "responseCode": "07", "responseMessage": "bank_name: The provider bank does not exist.", "errorMessage": "bank_name: The provider bank does not exist.", "responseBody": {}, "statusCode": "400"}}

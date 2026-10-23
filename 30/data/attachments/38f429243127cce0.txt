@@ -1,4 +1,0 @@
-{
-  "payment_method": "unsupported-methodss",
-  "reference": "ER|ZDU8XBZEX4SEDL"
-}

@@ -1,1 +1,0 @@
-{"requestSuccessful":true,"responseCode":"success","responseMessage":"success","responseBody":{"integrationRail":"DYNAMIC","paymentReference":"QA-1792703693736-876","transactionReference":"ER|ZDU8XBZEX4SEDL","checkoutUrl":"https://phoenix-checkout-dev.netlify.app/ER|ZDU8XBZEX4SEDL/bank-transfer"},"statusCode":200}
