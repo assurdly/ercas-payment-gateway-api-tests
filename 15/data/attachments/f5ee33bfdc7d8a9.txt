@@ -1,4 +1,0 @@
-{
-  "type": "",
-  "customer_id": ""
-}

@@ -1,1 +1,0 @@
-{"type":"validation_error","code":"invalid","message":"An error occurred while redeeming coin","field_name":"wallet"}

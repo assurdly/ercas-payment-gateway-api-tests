@@ -1,9 +1,0 @@
-{
-  "merchant_id": "h22gffwm2tvr9ssfwcr8fama",
-  "terminal_id": "h22gffwm2tvr9ssfwcr8fama",
-  "merchant_name": "string",
-  "currency": "string",
-  "status": "ACTIVE",
-  "card": "",
-  "user": ""
-}
