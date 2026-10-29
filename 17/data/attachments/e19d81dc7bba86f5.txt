@@ -1,7 +1,0 @@
-{
-  "gift_id": "snmzlxrpcjmqddtsanwp3r2a",
-  "batch_id": "snmzlxrpcjmqddtsanwp3r2a",
-  "currency": "string",
-  "amount": -1,
-  "win_id": "snmzlxrpcjmqddtsanwp3r2a"
-}

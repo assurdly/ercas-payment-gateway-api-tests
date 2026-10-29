@@ -1,5 +1,0 @@
-{
-  "created_at": "2026-10-29T22:15:18.692Z",
-  "product_type": "invalid_option",
-  "provider_name": "SAGECLOUD"
-}

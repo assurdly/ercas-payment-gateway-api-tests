@@ -1,6 +1,0 @@
-{
-  "pin": "",
-  "is_enabled": "",
-  "single_transaction_limit": "",
-  "daily_transaction_limit": ""
-}

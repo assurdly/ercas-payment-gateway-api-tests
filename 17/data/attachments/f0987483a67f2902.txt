@@ -1,1 +1,0 @@
-{"type":"validation_error","code":"invalid","message":"The JSON value could not be converted to System.Collections.Generic.List`1[System.Text.Json.JsonElement]. Path: $.items | LineNumber: 4 | BytePositionInLine: 13.","field_name":"items"}

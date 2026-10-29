@@ -1,9 +1,0 @@
-{
-  "account": "",
-  "amount": "",
-  "title": "",
-  "start_date": "",
-  "timeline": "",
-  "pay_interest_upfront": "",
-  "pin": ""
-}

@@ -1,7 +1,0 @@
-{
-  "quantity": 1000,
-  "network": "string",
-  "channel": "WEB",
-  "pin": "1234",
-  "sender_account": ""
-}

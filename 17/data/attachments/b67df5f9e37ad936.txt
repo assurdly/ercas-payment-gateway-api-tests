@@ -1,1 +1,0 @@
-{"type":"validation_error","code":"invalid","message":"The JSON value could not be converted to PersonalBankingSupport.Application.Contracts.Dtos.RedeemCoinsRequest. Path: $.total_coins | LineNumber: 1 | BytePositionInLine: 19.","field_name":"total_coins"}

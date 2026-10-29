@@ -1,4 +1,0 @@
-{
-  "meter_number": "string",
-  "service_type": "invalid_option"
-}

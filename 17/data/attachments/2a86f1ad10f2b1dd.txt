@@ -1,4 +1,0 @@
-{
-  "pin": "",
-  "withdrawal_reason": ""
-}

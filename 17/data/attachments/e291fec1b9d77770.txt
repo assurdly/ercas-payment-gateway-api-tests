@@ -1,1 +1,0 @@
-{"type":"validation_error","code":"invalid","message":"The JSON value could not be converted to System.Collections.Generic.List`1[System.String]. Path: $.impact_transaction_type | LineNumber: 2 | BytePositionInLine: 45.","field_name":"impact_transaction_type"}
