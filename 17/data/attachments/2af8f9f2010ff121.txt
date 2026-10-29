@@ -1,0 +1,9 @@
+{
+  "merchant_id": "snmzlxrpcjmqddtsanwp3r2a",
+  "terminal_id": "snmzlxrpcjmqddtsanwp3r2a",
+  "merchant_name": "string",
+  "currency": "string",
+  "status": "ACTIVE",
+  "card": "",
+  "user": ""
+}

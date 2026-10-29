@@ -1,0 +1,6 @@
+{
+  "user": "",
+  "nin": "",
+  "bvn": "",
+  "verification_id": ""
+}

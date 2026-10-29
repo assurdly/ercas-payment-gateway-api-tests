@@ -1,0 +1,12 @@
+{
+  "amount": "1000.00",
+  "pin": "invalid",
+  "enable_interest": true,
+  "enable_auto_monthly_interest_withdrawals": true,
+  "autosave_start_date": "2026-07-29",
+  "enable_autosave": true,
+  "autosave_frequency": "DAILY",
+  "autosave_day_of_week": "Monday",
+  "autosave_calendar_day": 1,
+  "account": ""
+}

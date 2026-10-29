@@ -1,0 +1,5 @@
+{
+  "email": "qa.personal-banking@example.com",
+  "login_pin": "invalid",
+  "device_id": "qa-device-001"
+}

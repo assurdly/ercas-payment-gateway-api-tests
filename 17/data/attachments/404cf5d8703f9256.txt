@@ -1,0 +1,1 @@
+{"success":true,"status":"success","data":["Bet9ja","NairaBet","SportyBet"]}

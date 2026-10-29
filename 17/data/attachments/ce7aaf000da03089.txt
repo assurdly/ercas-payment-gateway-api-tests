@@ -1,0 +1,14 @@
+{
+  "account": "",
+  "target_amount": -1,
+  "autosave_amount": -1,
+  "pin": "1234",
+  "start_date": "2026-07-29",
+  "autosave_frequency": "DAILY",
+  "autosave_day_of_week": "Monday",
+  "autosave_calendar_day": 1,
+  "duration": 1,
+  "duration_type": "DAYS",
+  "target_product": -1,
+  "target_name": -1
+}

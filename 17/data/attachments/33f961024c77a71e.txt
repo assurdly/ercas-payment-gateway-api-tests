@@ -1,0 +1,1 @@
+{"type":"validation_error","code":"invalid","message":"The JSON value could not be converted to PersonalBankingSupport.Application.Contracts.Dtos.CardMatchRequest. Path: $.round_number | LineNumber: 1 | BytePositionInLine: 20.","field_name":"round_number"}
