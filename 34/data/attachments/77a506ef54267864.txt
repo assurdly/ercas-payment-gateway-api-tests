@@ -1,0 +1,12 @@
+let jsonData = {};
+pm.test("Response is valid JSON", function () {
+    jsonData = pm.response.json();
+    pm.expect(jsonData).to.be.an("object");
+});
+// Inferred expected behaviour - confirm against API specification.
+pm.test("Status code is 400 or 409", function () {
+    pm.expect([400,409]).to.include(pm.response.code);
+});
+pm.test("Error response has failure details", function () {
+    pm.expect(jsonData.requestSuccessful).to.not.equal(true);
+    pm.expect(jsonData.errors.errorMessage || jsonData.errors.responseMessage || jsonData.errors.responseCode).to.exist;});

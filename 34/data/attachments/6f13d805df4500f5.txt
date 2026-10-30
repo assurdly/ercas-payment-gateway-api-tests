@@ -1,0 +1,17 @@
+{
+  "amount": 100,
+  "paymentReference": "QA-1793396927442-835",
+  "paymentMethods": "card,bank-transfer,ussd,qrcode",
+  "customerName": "Gregg Walsh MD",
+  "customerEmail": "qa.1793396927442@example.com",
+  "customerPhoneNumber": "08034377737",
+  "redirectUrl": "https://example.com/payments/callback",
+  "description": "QA payment initiation test",
+  "currency": "NGN",
+  "feeBearer": "customer",
+  "metadata": {
+    "firstname": "Mackenzie",
+    "lastname": "Bernier",
+    "email": "qa.1793396927442@example.com"
+  }
+}

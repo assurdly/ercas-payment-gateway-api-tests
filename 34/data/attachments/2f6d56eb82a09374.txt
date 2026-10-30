@@ -1,0 +1,4 @@
+{
+  "payment_method": "card",
+  "reference": "QA-1793396931402-{{$randomInt}"
+}

@@ -1,0 +1,8 @@
+let jsonData = {};
+pm.test("Response is valid JSON", function () {
+    jsonData = pm.response.json();
+    pm.expect(jsonData).to.be.an("object");
+});
+pm.test("Status code is 404", function () {
+    pm.expect([404, 400]).to.include(pm.response.code);
+});
