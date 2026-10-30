@@ -1,0 +1,16 @@
+{
+  "amount": "",
+  "narration": "",
+  "type": "",
+  "is_recurring": "",
+  "frequency": "",
+  "start_date": "",
+  "end_date": "",
+  "schedule_run_day_of_week": "",
+  "schedule_run_calendar_day": "",
+  "account_number": "",
+  "pin": "",
+  "data_phone": "",
+  "data_plan_code": "",
+  "data_network": ""
+}

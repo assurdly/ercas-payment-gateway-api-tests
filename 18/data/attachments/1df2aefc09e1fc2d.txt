@@ -1,0 +1,9 @@
+{
+  "account": "",
+  "amount": -1,
+  "title": "string",
+  "start_date": "2026-07-29",
+  "timeline": "string",
+  "pay_interest_upfront": false,
+  "pin": "1234"
+}

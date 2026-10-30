@@ -1,0 +1,6 @@
+{
+  "pin": "1234",
+  "account": "",
+  "provider": "",
+  "insurance": "string"
+}

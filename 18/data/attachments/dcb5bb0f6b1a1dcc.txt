@@ -1,0 +1,1 @@
+{"type":"validation_error","code":"invalid","message":"The JSON value could not be converted to PersonalBankingSupport.Application.Contracts.Dtos.UpdateScheduleRequest. Path: $.is_recurring | LineNumber: 6 | BytePositionInLine: 20.","field_name":"is_recurring"}

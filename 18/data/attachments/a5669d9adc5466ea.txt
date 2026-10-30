@@ -1,0 +1,1 @@
+{"type":"validation_error","code":"invalid","message":"The JSON value could not be converted to PersonalBankingSupport.Application.Contracts.Dtos.ChannelSettingUpdateRequest. Path: $.is_enabled | LineNumber: 2 | BytePositionInLine: 18.","field_name":"is_enabled"}

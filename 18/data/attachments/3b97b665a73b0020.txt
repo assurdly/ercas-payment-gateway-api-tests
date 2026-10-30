@@ -1,0 +1,4 @@
+{
+  "duration_type": "DAYS",
+  "target_amount": "1000.00"
+}

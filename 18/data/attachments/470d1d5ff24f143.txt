@@ -1,0 +1,7 @@
+{
+  "name": "",
+  "max_transfers_per_day": "",
+  "unlimited_on_date": "",
+  "enabled": "",
+  "exclude_staff": ""
+}

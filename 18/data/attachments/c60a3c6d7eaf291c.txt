@@ -1,0 +1,7 @@
+{
+  "swag": "",
+  "start_date": "",
+  "end_date": "",
+  "document_type": "",
+  "request_type": ""
+}

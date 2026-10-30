@@ -1,0 +1,11 @@
+{
+  "amount": "",
+  "phone": "",
+  "provider": "",
+  "plan_code": "",
+  "narration": "",
+  "channel": "",
+  "pin": "",
+  "sender_account": "",
+  "save_as_beneficiary": ""
+}

@@ -1,0 +1,10 @@
+{
+  "autosave_amount": "",
+  "autosave_start_date": "",
+  "enable_autosave": "",
+  "autosave_frequency": "",
+  "autosave_day_of_week": "",
+  "wallet": "",
+  "pin": "",
+  "autosave_calendar_day": ""
+}

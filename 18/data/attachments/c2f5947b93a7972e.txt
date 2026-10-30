@@ -1,0 +1,1 @@
+{"type":"validation_error","code":"invalid","message":"The JSON value could not be converted to PersonalBankingSupport.Application.Contracts.Dtos.CreateAirtimeScheduleRequest. Path: $.amount | LineNumber: 1 | BytePositionInLine: 14.","field_name":"amount"}

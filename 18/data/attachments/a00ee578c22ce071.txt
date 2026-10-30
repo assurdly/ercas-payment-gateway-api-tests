@@ -1,0 +1,4 @@
+{
+  "account_no": "",
+  "bank": "string"
+}

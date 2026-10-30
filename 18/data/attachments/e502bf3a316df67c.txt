@@ -1,0 +1,10 @@
+{
+  "created_at": "",
+  "amount": "",
+  "win_id": "",
+  "currency": "",
+  "is_customer_notify": "",
+  "is_price_redeemed": "",
+  "cashtoken_recipient": "",
+  "user": ""
+}
